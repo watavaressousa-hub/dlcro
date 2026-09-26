@@ -1,0 +1,29 @@
+﻿@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix quantitykind: <http://qudt.org/vocab/quantitykind/> .
+
+
+@prefix dlcro-ctx: <https://w3id.org/dlcro/context#> .
+@prefix dlcro-core: <https://w3id.org/dlcro/core#> .
+@prefix dlcro-rad: <https://w3id.org/dlcro/radiometry#> .
+
+
+<https://w3id.org/dlcro/context> a owl:Ontology ;
+  owl:versionIRI <https://w3id.org/dlcro/0.1.0-dev/context> ;
+  owl:versionInfo "0.1.0-dev" ;
+  dcterms:title "DLCRO Context"@en ;
+  owl:imports <https://w3id.org/dlcro/core>, <https://w3id.org/dlcro/radiometry> .
+dlcro-ctx:MeasurementGeometry a owl:Class ; rdfs:label "measurement geometry"@en ; skos:altLabel "geometria de medição"@pt-BR .
+dlcro-ctx:ExposureGeometry a owl:Class ; rdfs:label "exposure geometry"@en ; skos:altLabel "geometria de exposição"@pt-BR .
+dlcro-ctx:InfluenceCondition a owl:Class ; rdfs:label "influence condition"@en ; skos:altLabel "condição de influência"@pt-BR .
+dlcro-ctx:BatteryState a owl:Class ; rdfs:label "battery state"@en ; skos:altLabel "estado da bateria"@pt-BR .
+dlcro-ctx:MaintenanceEvent a owl:Class ; rdfs:label "maintenance event"@en ; skos:altLabel "evento de manutenção"@pt-BR .
+dlcro-ctx:hasGeometry a owl:ObjectProperty ; rdfs:label "has geometry"@en .
+dlcro-ctx:hasInfluenceCondition a owl:ObjectProperty ; rdfs:label "has influence condition"@en .
+dlcro-ctx:concerns a owl:ObjectProperty ; rdfs:label "concerns"@en .

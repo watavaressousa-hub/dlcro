@@ -1,0 +1,49 @@
+﻿@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix quantitykind: <http://qudt.org/vocab/quantitykind/> .
+
+
+@prefix dlcro-mat: <https://w3id.org/dlcro/material#> .
+@prefix dlcro-core: <https://w3id.org/dlcro/core#> .
+@prefix dlcro-rad: <https://w3id.org/dlcro/radiometry#> .
+@prefix dlcro-met: <https://w3id.org/dlcro/metrology#> .
+
+
+<https://w3id.org/dlcro/material> a owl:Ontology ;
+  owl:versionIRI <https://w3id.org/dlcro/0.1.0-dev/material> ;
+  owl:versionInfo "0.1.0-dev" ;
+  dcterms:title "DLCRO Material"@en ;
+  owl:imports <https://w3id.org/dlcro/core>, <https://w3id.org/dlcro/radiometry>, <https://w3id.org/dlcro/metrology> .
+dlcro-mat:DentalResinMaterial a owl:Class ; rdfs:label "dental resin material"@en ; skos:altLabel "material resinoso dental"@pt-BR .
+dlcro-mat:MaterialSpecimen a owl:Class ; rdfs:label "material specimen"@en ; skos:altLabel "espécime de material"@pt-BR .
+dlcro-mat:SpecimenGeometry a owl:Class ; rdfs:label "specimen geometry"@en ; skos:altLabel "geometria do espécime"@pt-BR .
+dlcro-mat:PhotoinitiatingSystem a owl:Class ; rdfs:label "photoinitiating system"@en ; skos:altLabel "sistema fotoiniciador"@pt-BR .
+dlcro-mat:Photoinitiator a owl:Class ; rdfs:label "photoinitiator"@en ; skos:altLabel "fotoiniciador"@pt-BR .
+dlcro-mat:Coinitiator a owl:Class ; rdfs:label "coinitiator"@en ; skos:altLabel "co-iniciador"@pt-BR .
+dlcro-mat:AbsorptionSpectrum a owl:Class ; rdfs:label "absorption spectrum"@en ; skos:altLabel "espectro de absorção"@pt-BR .
+dlcro-mat:OpticalAttenuationDescriptor a owl:Class ; rdfs:label "optical attenuation descriptor"@en ; skos:altLabel "descritor de atenuação óptica"@pt-BR .
+dlcro-mat:SpectralCompatibilityAssessment a owl:Class ; rdfs:label "spectral compatibility assessment"@en ; skos:altLabel "avaliação de compatibilidade espectral"@pt-BR .
+dlcro-mat:PolymerizationOutcomeEvidence a owl:Class ; rdfs:label "polymerization outcome evidence"@en ; skos:altLabel "evidência de resultado de polimerização"@pt-BR .
+dlcro-mat:DegreeOfConversionMeasurand a owl:Class ; rdfs:label "degree of conversion measurand"@en ; skos:altLabel "mensurando grau de conversão"@pt-BR .
+dlcro-mat:DepthOfCureMeasurand a owl:Class ; rdfs:label "depth of cure measurand"@en ; skos:altLabel "mensurando profundidade de cura"@pt-BR .
+dlcro-mat:HardnessMeasurand a owl:Class ; rdfs:label "hardness measurand"@en ; skos:altLabel "mensurando dureza"@pt-BR .
+dlcro-mat:hasPhotoinitiatingSystem a owl:ObjectProperty ; rdfs:label "has photoinitiating system"@en .
+dlcro-mat:hasPhotoinitiator a owl:ObjectProperty ; rdfs:label "has photoinitiator"@en .
+dlcro-mat:hasCoinitiator a owl:ObjectProperty ; rdfs:label "has coinitiator"@en .
+dlcro-mat:hasAbsorptionSpectrum a owl:ObjectProperty ; rdfs:label "has absorption spectrum"@en .
+dlcro-mat:realizesMaterial a owl:ObjectProperty ; rdfs:label "realizes material"@en .
+dlcro-mat:hasSpecimenGeometry a owl:ObjectProperty ; rdfs:label "has specimen geometry"@en .
+dlcro-mat:hasMaterialThickness a owl:ObjectProperty ; rdfs:label "has material thickness"@en .
+dlcro-mat:hasOpticalPathLength a owl:ObjectProperty ; rdfs:label "has optical path length"@en .
+dlcro-mat:hasOpticalAttenuationDescriptor a owl:ObjectProperty ; rdfs:label "has optical attenuation descriptor"@en .
+dlcro-mat:comparesEmission a owl:ObjectProperty ; rdfs:label "compares emission"@en .
+dlcro-mat:comparesAbsorption a owl:ObjectProperty ; rdfs:label "compares absorption"@en .
+dlcro-mat:assessedFor a owl:ObjectProperty ; rdfs:label "assessed for"@en .
+dlcro-mat:concernsSpecimen a owl:ObjectProperty ; rdfs:label "concerns specimen"@en .
+dlcro-mat:hasMeasurementResult a owl:ObjectProperty ; rdfs:label "has measurement result"@en .

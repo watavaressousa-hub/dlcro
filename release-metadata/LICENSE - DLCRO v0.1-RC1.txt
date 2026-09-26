@@ -1,0 +1,6 @@
+﻿DLCRO v0.1-RC1 — Licensing
+Ontology modules, example RDF data, SHACL shapes, SPARQL queries and documentation: Creative Commons Attribution 4.0 International (CC BY 4.0). SPDX: CC-BY-4.0.
+Validation/software scripts: MIT License. SPDX: MIT.
+External ontologies/vocabularies are not vendored as part of the DLCRO core; mappings reference their canonical IRIs. External resources remain subject to their own licenses.
+Attribution requested: Dental Light-Curing and Radiometry Ontology (DLCRO), version 0.1-RC1, 2026.
+This release is a release candidate, not a stable final release.

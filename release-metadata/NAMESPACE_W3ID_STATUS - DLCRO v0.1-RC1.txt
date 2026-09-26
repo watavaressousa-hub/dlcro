@@ -1,0 +1,8 @@
+﻿DLCRO Namespace / W3ID Status — RC1
+Canonical namespace target: https://w3id.org/dlcro/
+Ontology IRI target: https://w3id.org/dlcro
+Modules: /core, /radiometry, /context, /metrology, /lcu, /radiometer, /material, /qi, /alignment.
+RC1 version IRI pattern: https://w3id.org/dlcro/0.1.0-dev/<module>.
+Status on 2026-09-26: PENDING RESERVATION.
+Verification: search of the official GitHub repository perma-id/w3id.org returned no entry for 'dlcro'. The release therefore MUST NOT claim that w3id.org/dlcro currently resolves.
+Action before stable v0.1: submit/approve the W3ID registration and verify redirect targets; rerun namespace QA after activation.

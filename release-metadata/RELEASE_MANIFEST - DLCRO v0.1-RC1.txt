@@ -1,0 +1,38 @@
+﻿RELEASE MANIFEST — DLCRO v0.1-RC1
+Release package folder: DLCRO_v0.1-RC1
+Drive folder ID: 1dMNkncK1AZTFxnXoHIpJGGWYgkUuGwfE
+Release date: 2026-09-26
+Status: Release Candidate 1; not a stable final release.
+
+
+Package inventory
+ontology/: 10 Turtle files — core, radiometry, context, metrology, lcu, radiometer, material, qi, alignment, dlcro aggregator.
+validation/: 11 artifacts — SHACL shapes, VAL03 validator/report, VAL04 full-engine reports/scripts/manifest, narrative VAL-04 record.
+examples/: 4 artifacts — positive demo KG, negative fixture, SPARQL result table, Pull09 manifest.
+documentation/: 6 artifacts — README, SPARQL CQ suite, manuscript outline, ARCH-02 policy, chemistry/clinical scope decision, identity migration record.
+release-metadata/: 5 artifacts — LICENSE, CHANGELOG, namespace/W3ID status, SHA-256 checksums, this release manifest.
+Total package objects inside subfolders: 36.
+
+
+Validation baseline
+VAL-04: pySHACL 0.40.1 / RDFLib 7.5.0 PASS.
+Valid fixture: Conforms=true; 0 results.
+Negative fixture: Conforms=false; 17 results.
+15/15 Must CQs compiled and non-empty on demo KG.
+10 Turtle; 382 merged triples; external owl:imports=0; import cycles=0.
+Strong OWL constructs monitored and absent: restrictions, strong equivalences, disjointness, property chains, nominals, owl:sameAs.
+
+
+Release policy
+Ontology/data/docs license: CC BY 4.0.
+Validation scripts license: MIT.
+Canonical namespace target: https://w3id.org/dlcro/.
+W3ID status: pending reservation; not claimed active.
+Validated ontology bytes retain versionIRI pattern 0.1.0-dev in RC1 by design. Stable v0.1 promotion requires W3ID activation, versionIRI promotion and full regression rerun.
+Default aggregator excludes Alignment intentionally.
+Demo values are synthetic validation sentinels, not experimental or clinical claims.
+
+
+QA decision
+All REL-01 acceptance-criterion categories are present: Turtle, shapes, queries, fixtures, docs, checksums, license, changelog, namespace/W3ID status and final QA evidence.
+No semantic change was introduced during packaging.

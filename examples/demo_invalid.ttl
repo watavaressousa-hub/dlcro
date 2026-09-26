@@ -1,0 +1,38 @@
+﻿@prefix ex: <https://w3id.org/dlcro/demo-invalid#> .
+@prefix dlcro-core: <https://w3id.org/dlcro/core#> .
+@prefix dlcro-met: <https://w3id.org/dlcro/metrology#> .
+@prefix dlcro-lcu: <https://w3id.org/dlcro/lcu#> .
+@prefix dlcro-rmeter: <https://w3id.org/dlcro/radiometer#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix quantitykind: <http://qudt.org/vocab/quantitykind/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+# Intentionally invalid fixture for SHACL negative testing.
+ex:badExposure a dlcro-lcu:ExposureEvent ;
+  dlcro-lcu:usesDevice ex:badLCU .
+
+
+ex:badLCU a dlcro-lcu:LightCuringUnit .
+
+
+ex:badRadiometer a dlcro-rmeter:DentalRadiometer .
+
+
+ex:badMeasurement a dlcro-met:MeasurementActivity ;
+  dlcro-met:usesInstrument ex:badRadiometer .
+
+
+ex:badResult a dlcro-met:MeasurementResult ;
+  dlcro-met:hasQuantityValue ex:badQV .
+
+
+ex:badQV a qudt:QuantityValue ;
+  qudt:hasQuantityKind quantitykind:Irradiance ;
+  qudt:numericValue "not-a-number" ;
+  qudt:unit unit:W-PER-M2 .
+
+
+ex:badBundle a dlcro-core:EvidenceBundle ;
+  dlcro-core:hasEvidenceComponent ex:badExposure .

@@ -1,0 +1,25 @@
+﻿@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+
+
+@prefix dlcro-qi: <https://w3id.org/dlcro/qi#> .
+@prefix dlcro-core: <https://w3id.org/dlcro/core#> .
+
+
+<https://w3id.org/dlcro/qi> a owl:Ontology ;
+  owl:versionIRI <https://w3id.org/dlcro/0.1.0-dev/qi> ;
+  owl:versionInfo "0.1.0-dev" ;
+  dcterms:title "DLCRO Quality Infrastructure"@en ;
+  owl:imports <https://w3id.org/dlcro/core> .
+dlcro-qi:StandardDocument a owl:Class ; rdfs:label "standard document"@en ; skos:altLabel "documento normativo"@pt-BR .
+dlcro-qi:Requirement a owl:Class ; rdfs:label "requirement"@en ; skos:altLabel "requisito"@pt-BR .
+dlcro-qi:ApplicabilityAssertion a owl:Class ; rdfs:label "applicability assertion"@en ; skos:altLabel "declaração de aplicabilidade"@pt-BR .
+dlcro-qi:ConformityEvidence a owl:Class ; rdfs:label "conformity evidence"@en ; skos:altLabel "evidência de conformidade"@pt-BR .
+dlcro-qi:hasRequirement a owl:ObjectProperty ; rdfs:label "has requirement"@en .
+dlcro-qi:assertsApplicability a owl:ObjectProperty ; rdfs:label "asserts applicability"@en .
+dlcro-qi:hasConformityEvidence a owl:ObjectProperty ; rdfs:label "has conformity evidence"@en .

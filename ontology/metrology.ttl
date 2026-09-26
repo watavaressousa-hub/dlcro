@@ -1,0 +1,57 @@
+﻿@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix quantitykind: <http://qudt.org/vocab/quantitykind/> .
+
+
+@prefix dlcro-met: <https://w3id.org/dlcro/metrology#> .
+@prefix dlcro-core: <https://w3id.org/dlcro/core#> .
+@prefix dlcro-rad: <https://w3id.org/dlcro/radiometry#> .
+@prefix dlcro-ctx: <https://w3id.org/dlcro/context#> .
+
+
+<https://w3id.org/dlcro/metrology> a owl:Ontology ;
+  owl:versionIRI <https://w3id.org/dlcro/0.1.0-dev/metrology> ;
+  owl:versionInfo "0.1.0-dev" ;
+  dcterms:title "DLCRO Metrology"@en ;
+  owl:imports <https://w3id.org/dlcro/core>, <https://w3id.org/dlcro/radiometry>, <https://w3id.org/dlcro/context> .
+dlcro-met:MeasurementActivity a owl:Class ; rdfs:label "measurement activity"@en ; skos:altLabel "atividade de medição"@pt-BR .
+dlcro-met:Measurand a owl:Class ; rdfs:label "measurand"@en ; skos:altLabel "mensurando"@pt-BR .
+dlcro-met:Indication a owl:Class ; rdfs:label "indication"@en ; skos:altLabel "indicação"@pt-BR .
+dlcro-met:CorrectedValue a owl:Class ; rdfs:label "corrected value"@en ; skos:altLabel "valor corrigido"@pt-BR .
+dlcro-met:MeasurementResult a owl:Class ; rdfs:label "measurement result"@en ; skos:altLabel "resultado de medição"@pt-BR .
+dlcro-met:MeasurementModel a owl:Class ; rdfs:label "measurement model"@en ; skos:altLabel "modelo de medição"@pt-BR .
+dlcro-met:CalibrationEvent a owl:Class ; rdfs:label "calibration event"@en ; skos:altLabel "calibração"@pt-BR .
+dlcro-met:VerificationEvent a owl:Class ; rdfs:label "verification event"@en ; skos:altLabel "verificação"@pt-BR .
+dlcro-met:TraceabilityStatement a owl:Class ; rdfs:label "metrological traceability statement"@en ; skos:altLabel "declaração de rastreabilidade"@pt-BR .
+dlcro-met:MeasurementUncertainty a owl:Class ; rdfs:label "measurement uncertainty"@en ; skos:altLabel "incerteza de medição"@pt-BR .
+dlcro-met:StandardUncertainty a owl:Class ; rdfs:label "standard uncertainty"@en ; skos:altLabel "incerteza-padrão"@pt-BR .
+dlcro-met:CombinedStandardUncertainty a owl:Class ; rdfs:label "combined standard uncertainty"@en ; skos:altLabel "incerteza-padrão combinada"@pt-BR .
+dlcro-met:ExpandedUncertainty a owl:Class ; rdfs:label "expanded uncertainty"@en ; skos:altLabel "incerteza expandida"@pt-BR .
+dlcro-met:CoverageFactor a owl:Class ; rdfs:label "coverage factor"@en ; skos:altLabel "fator de abrangência"@pt-BR .
+dlcro-met:CoverageProbability a owl:Class ; rdfs:label "coverage probability"@en ; skos:altLabel "probabilidade de abrangência"@pt-BR .
+dlcro-met:UncertaintyBudget a owl:Class ; rdfs:label "uncertainty budget"@en ; skos:altLabel "balanço de incerteza"@pt-BR .
+dlcro-met:EffectiveDegreesOfFreedom a owl:Class ; rdfs:label "effective degrees of freedom"@en ; skos:altLabel "graus de liberdade efetivos"@pt-BR .
+dlcro-met:SpectralMismatchCorrection a owl:Class ; rdfs:label "spectral mismatch correction"@en ; skos:altLabel "correção de desajuste espectral"@pt-BR .
+dlcro-met:usesInstrument a owl:ObjectProperty ; rdfs:label "uses instrument"@en .
+dlcro-met:producesIndication a owl:ObjectProperty ; rdfs:label "produces indication"@en .
+dlcro-met:derivedFrom a owl:ObjectProperty ; rdfs:label "derived from"@en .
+dlcro-met:hasTraceability a owl:ObjectProperty ; rdfs:label "has metrological traceability statement"@en .
+dlcro-met:hasUncertainty a owl:ObjectProperty ; rdfs:label "has measurement uncertainty"@en .
+dlcro-met:appliesCorrection a owl:ObjectProperty ; rdfs:label "applies correction"@en .
+dlcro-met:hasMeasurand a owl:ObjectProperty ; rdfs:label "has measurand"@en .
+dlcro-met:hasQuantityValue a owl:ObjectProperty ; rdfs:label "has quantity value"@en .
+dlcro-met:basedOnMeasurementModel a owl:ObjectProperty ; rdfs:label "based on measurement model"@en .
+dlcro-met:hasComponent a owl:ObjectProperty ; rdfs:label "has uncertainty component"@en .
+dlcro-met:hasCombinedStandardUncertainty a owl:ObjectProperty ; rdfs:label "has combined standard uncertainty"@en .
+dlcro-met:hasExpandedUncertainty a owl:ObjectProperty ; rdfs:label "has expanded uncertainty"@en .
+dlcro-met:hasCoverageFactor a owl:ObjectProperty ; rdfs:label "has coverage factor"@en .
+dlcro-met:hasCoverageProbability a owl:ObjectProperty ; rdfs:label "has coverage probability"@en .
+dlcro-met:hasEffectiveDegreesOfFreedom a owl:ObjectProperty ; rdfs:label "has effective degrees of freedom"@en .
+dlcro-met:hasUncertaintyBudget a owl:ObjectProperty ; rdfs:label "has uncertainty budget"@en .
+dlcro-met:subjectOf a owl:ObjectProperty ; rdfs:label "subject of metrological activity"@en .

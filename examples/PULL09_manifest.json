@@ -1,0 +1,20 @@
+﻿{
+  "pull": "09",
+  "date": "2026-09-26",
+  "ontology": "DLCRO v0.1-dev",
+  "validation_scope": "Drive-readback bytes",
+  "demo_triples": 172,
+  "invalid_triples": 14,
+  "valid_violations": 0,
+  "invalid_violations": 17,
+  "must_cq_total": 15,
+  "must_cq_nonempty": 15,
+  "hashes_sha256_drive_readback": {
+    "dlcro_minimal_shapes.ttl": "4ccbe58bda5793bb6850071bbe2e0ccc477a509502dc496b29ed0333dcf363fb",
+    "VAL03_validator.py": "efbdbf4b0141e6e2fc10726a1b5c849a3656044b2e4ee2e60252c5b8627349ad",
+    "demo_dlcro_v0.1.ttl": "75936925706658aa70e6a2250ac466cdfb4de3635d16bce675df6417fd7cb5c8",
+    "demo_invalid.ttl": "fae94fd82a327d2ac0cde39bc3fb10821b403b07c5d0b42f61511944680bf323",
+    "DEMO01_sparql_results.csv": "97dd30608ad09d59ca5a5184538de409891c8ca9215313421cbf5bc2d90d476a"
+  },
+  "note": "Hashes were calculated from raw bytes fetched back from Google Drive after publication normalization."
+}

@@ -1,0 +1,35 @@
+﻿@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix quantitykind: <http://qudt.org/vocab/quantitykind/> .
+
+
+@prefix dlcro-rad: <https://w3id.org/dlcro/radiometry#> .
+@prefix dlcro-core: <https://w3id.org/dlcro/core#> .
+
+
+<https://w3id.org/dlcro/radiometry> a owl:Ontology ;
+  owl:versionIRI <https://w3id.org/dlcro/0.1.0-dev/radiometry> ;
+  owl:versionInfo "0.1.0-dev" ;
+  dcterms:title "DLCRO Radiometry"@en ;
+  owl:imports <https://w3id.org/dlcro/core> .
+dlcro-rad:BeamProfile a owl:Class ; rdfs:label "beam profile"@en ; skos:altLabel "perfil espacial do feixe"@pt-BR .
+dlcro-rad:IrradianceMap a owl:Class ; rdfs:label "irradiance map"@en ; skos:altLabel "mapa de irradiância"@pt-BR .
+dlcro-rad:SpectralIrradianceDistribution a owl:Class ; rdfs:label "spectral irradiance distribution"@en ; skos:altLabel "distribuição de irradiância espectral"@pt-BR .
+dlcro-rad:IrradianceTimeSeries a owl:Class ; rdfs:label "irradiance time series"@en ; skos:altLabel "série temporal de irradiância"@pt-BR .
+dlcro-rad:EmissionSpectrum a owl:Class ; rdfs:label "emission spectrum"@en ; skos:altLabel "espectro de emissão"@pt-BR .
+dlcro-rad:EffectiveEmittingArea a owl:Class ; rdfs:label "effective emitting area"@en ; skos:altLabel "área emissora efetiva"@pt-BR .
+dlcro-rad:hasSpectralIrradiance a owl:ObjectProperty ; rdfs:label "has spectral irradiance distribution"@en .
+dlcro-rad:hasRadiantExposure a owl:ObjectProperty ; rdfs:label "has radiant exposure"@en .
+dlcro-rad:hasBeamProfile a owl:ObjectProperty ; rdfs:label "has beam profile"@en .
+dlcro-rad:hasIndependentVariable a owl:ObjectProperty ; rdfs:label "has independent variable"@en .
+dlcro-rad:hasEffectiveEmittingArea a owl:ObjectProperty ; rdfs:label "has effective emitting area"@en .
+dlcro-rad:hasEmissionSpectrum a owl:ObjectProperty ; rdfs:label "has emission spectrum"@en .
+
+
+# QUDT quantity kinds are reused by reference; no local duplicates are declared.

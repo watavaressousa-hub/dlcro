@@ -1,0 +1,18 @@
+{
+  "artifacts": {
+    "VAL04_pyshacl_valid_report.ttl": "4a53a3befd9bcdb7273ef3d6e47a83be519927771faee49ef0d2a44ee23be2be",
+    "VAL04_pyshacl_invalid_report.ttl": "9742b3c91003c8cd9dd5bed3232026853cd5977227ece33fe2c4a563a118e945",
+    "VAL04_full_engine_report.json": "55fa35fa8b44324d140826dd15f83dd70943b0e336b0b29294e1f5663013dc3a",
+    "VAL04_full_engine_report.md": "9236aed25921fb900bc66dc65f1cb2b6355fc56517800250239017c09c0f48d4",
+    "VAL04_sparql_regression.csv": "5ed0e6e5066ca3e79e1e7d984b112843bb684bba438a47d7acf1ba69faa80531",
+    "val04_full_gate.py": "9319c8bc3a93dacfca8da164e3696b35b227eb2df447b353a66f0a3df4e97070"
+  },
+  "engine": {
+    "name": "pySHACL",
+    "version": "0.40.1",
+    "rdflib": "7.5.0",
+    "inference": "none",
+    "advanced": false
+  },
+  "gate_pass": true
+}

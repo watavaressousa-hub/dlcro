@@ -1,0 +1,35 @@
+﻿@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix quantitykind: <http://qudt.org/vocab/quantitykind/> .
+
+
+@prefix dlcro-rmeter: <https://w3id.org/dlcro/radiometer#> .
+@prefix dlcro-core: <https://w3id.org/dlcro/core#> .
+@prefix dlcro-rad: <https://w3id.org/dlcro/radiometry#> .
+@prefix dlcro-ctx: <https://w3id.org/dlcro/context#> .
+@prefix dlcro-met: <https://w3id.org/dlcro/metrology#> .
+
+
+<https://w3id.org/dlcro/radiometer> a owl:Ontology ;
+  owl:versionIRI <https://w3id.org/dlcro/0.1.0-dev/radiometer> ;
+  owl:versionInfo "0.1.0-dev" ;
+  dcterms:title "DLCRO Dental Radiometer"@en ;
+  owl:imports <https://w3id.org/dlcro/core>, <https://w3id.org/dlcro/radiometry>, <https://w3id.org/dlcro/context>, <https://w3id.org/dlcro/metrology> .
+dlcro-rmeter:DentalRadiometer a owl:Class ; rdfs:label "dental radiometer"@en ; skos:altLabel "radiômetro dental"@pt-BR .
+dlcro-rmeter:Detector a owl:Class ; rdfs:label "detector"@en ; skos:altLabel "detector"@pt-BR .
+dlcro-rmeter:OpticalFilter a owl:Class ; rdfs:label "optical filter"@en ; skos:altLabel "filtro óptico"@pt-BR .
+dlcro-rmeter:Aperture a owl:Class ; rdfs:label "aperture"@en ; skos:altLabel "abertura"@pt-BR .
+dlcro-rmeter:CosineCorrector a owl:Class ; rdfs:label "cosine corrector"@en ; skos:altLabel "corretor cosseno"@pt-BR .
+dlcro-rmeter:SpectralResponsivity a owl:Class ; rdfs:label "spectral responsivity"@en ; skos:altLabel "responsividade espectral"@pt-BR .
+dlcro-rmeter:IntendedQuantity a owl:Class ; rdfs:label "intended quantity"@en ; skos:altLabel "grandeza pretendida"@pt-BR .
+dlcro-rmeter:hasSpectralResponsivity a owl:ObjectProperty ; rdfs:label "has spectral responsivity"@en .
+dlcro-rmeter:hasDetector a owl:ObjectProperty ; rdfs:label "has detector"@en .
+dlcro-rmeter:hasOpticalFilter a owl:ObjectProperty ; rdfs:label "has optical filter"@en .
+dlcro-rmeter:hasAperture a owl:ObjectProperty ; rdfs:label "has aperture"@en .
+dlcro-rmeter:declaresIntendedQuantity a owl:ObjectProperty ; rdfs:label "declares intended quantity"@en .

@@ -1,0 +1,22 @@
+﻿@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+
+<https://w3id.org/dlcro> a owl:Ontology ;
+  owl:versionIRI <https://w3id.org/dlcro/0.1.0-dev> ;
+  owl:versionInfo "0.1.0-dev" ;
+  dcterms:title "Dental Light-Curing and Radiometry Ontology (DLCRO)"@en ;
+  dcterms:description "Default DLCRO v0.1-dev aggregator. Imports DLCRO domain modules only; no external ontologies are owl:imported."@en ;
+  owl:imports
+    <https://w3id.org/dlcro/core>,
+    <https://w3id.org/dlcro/radiometry>,
+    <https://w3id.org/dlcro/context>,
+    <https://w3id.org/dlcro/metrology>,
+    <https://w3id.org/dlcro/lcu>,
+    <https://w3id.org/dlcro/radiometer>,
+    <https://w3id.org/dlcro/material>,
+    <https://w3id.org/dlcro/qi> .
+
+
+# The alignment module is intentionally not imported by the default aggregator.
+# A future full distribution may explicitly include https://w3id.org/dlcro/alignment .

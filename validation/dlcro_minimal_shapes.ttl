@@ -1,0 +1,84 @@
+﻿@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix dlcro-core: <https://w3id.org/dlcro/core#> .
+@prefix dlcro-rad: <https://w3id.org/dlcro/radiometry#> .
+@prefix dlcro-ctx: <https://w3id.org/dlcro/context#> .
+@prefix dlcro-met: <https://w3id.org/dlcro/metrology#> .
+@prefix dlcro-lcu: <https://w3id.org/dlcro/lcu#> .
+@prefix dlcro-rmeter: <https://w3id.org/dlcro/radiometer#> .
+
+
+<https://w3id.org/dlcro/shapes/minimal> a sh:NodeShape ;
+  rdfs:label "DLCRO minimal validation profile"@en .
+
+
+<https://w3id.org/dlcro/shapes/ExposureEventShape> a sh:NodeShape ;
+  sh:targetClass dlcro-lcu:ExposureEvent ;
+  sh:property [ sh:path dlcro-lcu:usesDevice ; sh:minCount 1 ; sh:class dlcro-lcu:LightCuringUnit ] ;
+  sh:property [ sh:path dlcro-lcu:usesMode ; sh:minCount 1 ; sh:class dlcro-lcu:OperatingMode ] ;
+  sh:property [ sh:path dlcro-lcu:usesTip ; sh:minCount 1 ; sh:class dlcro-lcu:LightGuideOrTip ] ;
+  sh:property [ sh:path dlcro-core:targets ; sh:minCount 1 ] ;
+  sh:property [ sh:path dlcro-ctx:hasGeometry ; sh:minCount 1 ] ;
+  sh:property [ sh:path dlcro-rad:hasSpectralIrradiance ; sh:minCount 1 ] ;
+  sh:property [ sh:path dlcro-rad:hasRadiantExposure ; sh:minCount 1 ] .
+
+
+<https://w3id.org/dlcro/shapes/LCUShape> a sh:NodeShape ;
+  sh:targetClass dlcro-lcu:LightCuringUnit ;
+  sh:property [ sh:path dlcro-lcu:hasOpticalSource ; sh:minCount 1 ; sh:class dlcro-lcu:OpticalSource ] ;
+  sh:property [ sh:path dlcro-lcu:hasDeliveryComponent ; sh:minCount 1 ; sh:class dlcro-lcu:LightGuideOrTip ] .
+
+
+<https://w3id.org/dlcro/shapes/MeasurementActivityShape> a sh:NodeShape ;
+  sh:targetClass dlcro-met:MeasurementActivity ;
+  sh:property [ sh:path dlcro-met:usesInstrument ; sh:minCount 1 ; sh:class dlcro-rmeter:DentalRadiometer ] ;
+  sh:property [ sh:path dlcro-met:producesIndication ; sh:minCount 1 ; sh:class dlcro-met:Indication ] .
+
+
+<https://w3id.org/dlcro/shapes/RadiometerShape> a sh:NodeShape ;
+  sh:targetClass dlcro-rmeter:DentalRadiometer ;
+  sh:property [ sh:path dlcro-rmeter:hasDetector ; sh:minCount 1 ; sh:class dlcro-rmeter:Detector ] ;
+  sh:property [ sh:path dlcro-rmeter:declaresIntendedQuantity ; sh:minCount 1 ; sh:class dlcro-rmeter:IntendedQuantity ] ;
+  sh:property [ sh:path dlcro-rmeter:hasSpectralResponsivity ; sh:minCount 1 ; sh:class dlcro-rmeter:SpectralResponsivity ] .
+
+
+<https://w3id.org/dlcro/shapes/MeasurementResultShape> a sh:NodeShape ;
+  sh:targetClass dlcro-met:MeasurementResult ;
+  sh:property [ sh:path dlcro-met:hasMeasurand ; sh:minCount 1 ; sh:class dlcro-met:Measurand ] ;
+  sh:property [ sh:path dlcro-met:hasQuantityValue ; sh:minCount 1 ; sh:class qudt:QuantityValue ] ;
+  sh:property [ sh:path dlcro-met:hasTraceability ; sh:minCount 1 ; sh:class dlcro-met:TraceabilityStatement ] ;
+  sh:property [ sh:path dlcro-met:hasUncertaintyBudget ; sh:minCount 1 ; sh:class dlcro-met:UncertaintyBudget ] .
+
+
+<https://w3id.org/dlcro/shapes/QuantityValueShape> a sh:NodeShape ;
+  sh:targetClass qudt:QuantityValue ;
+  sh:property [ sh:path qudt:hasQuantityKind ; sh:minCount 1 ] ;
+  sh:property [ sh:path qudt:numericValue ; sh:minCount 1 ; sh:datatype xsd:decimal ] ;
+  sh:property [ sh:path qudt:unit ; sh:minCount 1 ] .
+
+
+<https://w3id.org/dlcro/shapes/UncertaintyBudgetShape> a sh:NodeShape ;
+  sh:targetClass dlcro-met:UncertaintyBudget ;
+  sh:property [ sh:path dlcro-met:hasCombinedStandardUncertainty ; sh:minCount 1 ; sh:class dlcro-met:CombinedStandardUncertainty ] ;
+  sh:property [ sh:path dlcro-met:hasExpandedUncertainty ; sh:minCount 1 ; sh:class dlcro-met:ExpandedUncertainty ] ;
+  sh:property [ sh:path dlcro-met:hasEffectiveDegreesOfFreedom ; sh:minCount 1 ; sh:class dlcro-met:EffectiveDegreesOfFreedom ] .
+
+
+<https://w3id.org/dlcro/shapes/ExpandedUncertaintyShape> a sh:NodeShape ;
+  sh:targetClass dlcro-met:ExpandedUncertainty ;
+  sh:property [ sh:path dlcro-met:hasCoverageFactor ; sh:minCount 1 ; sh:class dlcro-met:CoverageFactor ] ;
+  sh:property [ sh:path dlcro-met:hasCoverageProbability ; sh:minCount 1 ; sh:class dlcro-met:CoverageProbability ] .
+
+
+<https://w3id.org/dlcro/shapes/TraceabilityShape> a sh:NodeShape ;
+  sh:targetClass dlcro-met:TraceabilityStatement ;
+  sh:property [ sh:path dcterms:source ; sh:minCount 1 ] .
+
+
+<https://w3id.org/dlcro/shapes/EvidenceBundleShape> a sh:NodeShape ;
+  sh:targetClass dlcro-core:EvidenceBundle ;
+  sh:property [ sh:path dlcro-core:hasEvidenceComponent ; sh:minCount 3 ] .

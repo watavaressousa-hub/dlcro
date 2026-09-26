@@ -1,0 +1,39 @@
+﻿@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+
+
+@prefix dlcro-align: <https://w3id.org/dlcro/alignment#> .
+@prefix dlcro-lcu: <https://w3id.org/dlcro/lcu#> .
+@prefix dlcro-rmeter: <https://w3id.org/dlcro/radiometer#> .
+@prefix dlcro-met: <https://w3id.org/dlcro/metrology#> .
+@prefix dlcro-ctx: <https://w3id.org/dlcro/context#> .
+
+
+<https://w3id.org/dlcro/alignment> a owl:Ontology ;
+  owl:versionIRI <https://w3id.org/dlcro/0.1.0-dev/alignment> ;
+  owl:versionInfo "0.1.0-dev" ;
+  dcterms:title "DLCRO Alignment"@en ;
+  owl:imports <https://w3id.org/dlcro/core>, <https://w3id.org/dlcro/radiometry>, <https://w3id.org/dlcro/context>, <https://w3id.org/dlcro/metrology>, <https://w3id.org/dlcro/lcu>, <https://w3id.org/dlcro/radiometer>, <https://w3id.org/dlcro/material>, <https://w3id.org/dlcro/qi> .
+dlcro-align:AlignmentAssertion a owl:Class ; rdfs:label "alignment assertion"@en ; skos:altLabel "declaração de alinhamento"@pt-BR .
+
+
+# SSN/SOSA mappings approved in ARCH-02
+dlcro-met:MeasurementActivity rdfs:subClassOf sosa:Observation, prov:Activity .
+dlcro-rmeter:Detector rdfs:subClassOf sosa:Sensor .
+dlcro-rmeter:DentalRadiometer rdfs:subClassOf ssn:System .
+dlcro-lcu:LightCuringUnit rdfs:subClassOf ssn:System .
+
+
+# PROV-O mappings approved at subclass strength
+dlcro-lcu:ExposureEvent rdfs:subClassOf prov:Activity .
+dlcro-met:CalibrationEvent rdfs:subClassOf prov:Activity .
+dlcro-met:VerificationEvent rdfs:subClassOf prov:Activity .
+dlcro-ctx:MaintenanceEvent rdfs:subClassOf prov:Activity .
+
+
+# No external owl:imports and no owl:equivalentClass/equivalentProperty in v0.1-dev.

@@ -1,0 +1,34 @@
+﻿@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix quantitykind: <http://qudt.org/vocab/quantitykind/> .
+
+
+@prefix dlcro-lcu: <https://w3id.org/dlcro/lcu#> .
+@prefix dlcro-core: <https://w3id.org/dlcro/core#> .
+@prefix dlcro-rad: <https://w3id.org/dlcro/radiometry#> .
+@prefix dlcro-ctx: <https://w3id.org/dlcro/context#> .
+
+
+<https://w3id.org/dlcro/lcu> a owl:Ontology ;
+  owl:versionIRI <https://w3id.org/dlcro/0.1.0-dev/lcu> ;
+  owl:versionInfo "0.1.0-dev" ;
+  dcterms:title "DLCRO Light-Curing Unit"@en ;
+  owl:imports <https://w3id.org/dlcro/core>, <https://w3id.org/dlcro/radiometry>, <https://w3id.org/dlcro/context> .
+dlcro-lcu:LightCuringUnit a owl:Class ; rdfs:label "dental light-curing unit"@en ; skos:altLabel "fotopolimerizador dental"@pt-BR .
+dlcro-lcu:OpticalSource a owl:Class ; rdfs:label "optical source"@en ; skos:altLabel "fonte óptica"@pt-BR .
+dlcro-lcu:OperatingMode a owl:Class ; rdfs:label "operating mode"@en ; skos:altLabel "modo de operação"@pt-BR .
+dlcro-lcu:LightGuideOrTip a owl:Class ; rdfs:label "light guide or tip"@en ; skos:altLabel "guia ou ponta emissora"@pt-BR .
+dlcro-lcu:ExposureEvent a owl:Class ; rdfs:label "exposure event"@en ; skos:altLabel "evento de exposição"@pt-BR .
+dlcro-lcu:realizes a owl:ObjectProperty ; rdfs:label "realizes exposure event"@en .
+dlcro-lcu:usesMode a owl:ObjectProperty ; rdfs:label "uses operating mode"@en .
+dlcro-lcu:hasOpticalSource a owl:ObjectProperty ; rdfs:label "has optical source"@en .
+dlcro-lcu:hasDeliveryComponent a owl:ObjectProperty ; rdfs:label "has delivery component"@en .
+dlcro-lcu:usesDevice a owl:ObjectProperty ; rdfs:label "uses device"@en .
+dlcro-lcu:usesTip a owl:ObjectProperty ; rdfs:label "uses tip"@en .
+dlcro-lcu:exposes a owl:ObjectProperty ; rdfs:label "exposes"@en .

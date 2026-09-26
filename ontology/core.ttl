@@ -1,0 +1,23 @@
+﻿@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix quantitykind: <http://qudt.org/vocab/quantitykind/> .
+
+
+@prefix dlcro-core: <https://w3id.org/dlcro/core#> .
+
+
+<https://w3id.org/dlcro/core> a owl:Ontology ;
+  owl:versionIRI <https://w3id.org/dlcro/0.1.0-dev/core> ;
+  owl:versionInfo "0.1.0-dev" ;
+  dcterms:title "DLCRO Core"@en .
+dlcro-core:EvidenceBundle a owl:Class ; rdfs:label "evidence bundle"@en ; skos:altLabel "pacote de evidências"@pt-BR .
+dlcro-core:ExposureTarget a owl:Class ; rdfs:label "exposure target"@en ; skos:altLabel "alvo da exposição"@pt-BR .
+dlcro-core:hasEvidenceComponent a owl:ObjectProperty ; rdfs:label "has evidence component"@en .
+dlcro-core:targets a owl:ObjectProperty ; rdfs:label "targets"@en .
+dlcro-core:hasProvenanceEntity a owl:ObjectProperty ; rdfs:label "has provenance entity"@en .

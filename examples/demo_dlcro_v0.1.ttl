@@ -1,0 +1,276 @@
+﻿@prefix ex: <https://w3id.org/dlcro/demo#> .
+@prefix dlcro-core: <https://w3id.org/dlcro/core#> .
+@prefix dlcro-rad: <https://w3id.org/dlcro/radiometry#> .
+@prefix dlcro-ctx: <https://w3id.org/dlcro/context#> .
+@prefix dlcro-met: <https://w3id.org/dlcro/metrology#> .
+@prefix dlcro-lcu: <https://w3id.org/dlcro/lcu#> .
+@prefix dlcro-rmeter: <https://w3id.org/dlcro/radiometer#> .
+@prefix dlcro-mat: <https://w3id.org/dlcro/material#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix quantitykind: <http://qudt.org/vocab/quantitykind/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+ex:DemoFixture a prov:Entity ;
+  dcterms:title "DLCRO synthetic validation fixture"@en ;
+  dcterms:description "Synthetic data created only to exercise DLCRO competency questions and SHACL constraints. Values are not measurements of a real device or material and must not be interpreted as performance claims."@en .
+
+
+ex:lcu1 a dlcro-lcu:LightCuringUnit ;
+  dcterms:identifier "SYNTH-LCU-01" ;
+  dcterms:description "Synthetic LCU instance for semantic validation only."@en ;
+  dlcro-lcu:hasOpticalSource ex:source1 ;
+  dlcro-lcu:hasDeliveryComponent ex:tip1 .
+
+
+ex:source1 a dlcro-lcu:OpticalSource ;
+  dcterms:description "Synthetic optical source."@en .
+
+
+ex:mode1 a dlcro-lcu:OperatingMode ;
+  dcterms:description "Synthetic operating mode."@en .
+
+
+ex:tip1 a dlcro-lcu:LightGuideOrTip ;
+  dcterms:description "Synthetic emitting tip."@en .
+
+
+ex:target1 a dlcro-mat:MaterialSpecimen ;
+  dlcro-mat:realizesMaterial ex:material1 ;
+  dcterms:description "Synthetic material specimen."@en .
+
+
+ex:material1 a dlcro-mat:DentalResinMaterial ;
+  dcterms:description "Synthetic resin material; no commercial or clinical identity is asserted."@en ;
+  dlcro-mat:hasPhotoinitiatingSystem ex:piSystem1 .
+
+
+ex:piSystem1 a dlcro-mat:PhotoinitiatingSystem ;
+  dlcro-mat:hasPhotoinitiator ex:photoinitiator1 .
+
+
+ex:photoinitiator1 a dlcro-mat:Photoinitiator ;
+  dcterms:description "Synthetic photoinitiator instance; chemical identity intentionally unspecified in this fixture."@en ;
+  dlcro-mat:hasAbsorptionSpectrum ex:absorption1 .
+
+
+ex:absorption1 a dlcro-mat:AbsorptionSpectrum ;
+  dcterms:description "Synthetic absorption-spectrum placeholder."@en .
+
+
+ex:geometry1 a dlcro-ctx:ExposureGeometry ;
+  dcterms:description "Synthetic geometry: tip and target aligned on-axis; values are validation placeholders, not experimental measurements."@en ;
+  dlcro-met:hasQuantityValue ex:distanceValue .
+
+
+ex:distanceValue a qudt:QuantityValue ;
+  qudt:hasQuantityKind quantitykind:Length ;
+  qudt:numericValue "1.0"^^xsd:decimal ;
+  qudt:unit unit:MilliM .
+
+
+ex:wavelengthAxis a prov:Entity ;
+  dcterms:description "Synthetic wavelength-axis descriptor; no measured wavelength vector is asserted."@en .
+
+
+ex:spectrum1 a dlcro-rad:SpectralIrradianceDistribution ;
+  dlcro-rad:hasIndependentVariable ex:wavelengthAxis ;
+  dlcro-core:hasProvenanceEntity ex:spectrumProv ;
+  dcterms:description "Synthetic spectral object; no measured spectrum is asserted."@en .
+
+
+ex:spectrumProv a prov:Entity ;
+  prov:wasGeneratedBy ex:demoConstruction .
+
+
+ex:demoConstruction a prov:Activity ;
+  prov:wasAssociatedWith ex:demoAgent .
+
+
+ex:demoAgent a prov:Agent ;
+  dcterms:title "DLCRO validation workflow"@en .
+
+
+ex:exposure1 a dlcro-lcu:ExposureEvent ;
+  dlcro-lcu:usesDevice ex:lcu1 ;
+  dlcro-lcu:usesMode ex:mode1 ;
+  dlcro-lcu:usesTip ex:tip1 ;
+  dlcro-lcu:exposes ex:target1 ;
+  dlcro-core:targets ex:target1 ;
+  dlcro-ctx:hasGeometry ex:geometry1 ;
+  dlcro-rad:hasSpectralIrradiance ex:spectrum1 ;
+  dlcro-met:hasQuantityValue ex:irradianceValue ;
+  dlcro-rad:hasRadiantExposure ex:radiantExposureValue ;
+  dlcro-core:hasProvenanceEntity ex:exposureProv .
+
+
+ex:irradianceValue a qudt:QuantityValue ;
+  qudt:hasQuantityKind quantitykind:Irradiance ;
+  qudt:numericValue "1.0"^^xsd:decimal ;
+  qudt:unit unit:W-PER-M2 ;
+  dcterms:description "Synthetic sentinel quantity for query/shape validation only."@en .
+
+
+ex:radiantExposureValue a qudt:QuantityValue ;
+  qudt:hasQuantityKind quantitykind:RadiantExposure ;
+  qudt:numericValue "1.0"^^xsd:decimal ;
+  qudt:unit unit:J-PER-M2 ;
+  dlcro-met:derivedFrom ex:irradianceValue ;
+  dlcro-met:basedOnMeasurementModel ex:exposureModel ;
+  dcterms:description "Synthetic sentinel quantity for query/shape validation only."@en .
+
+
+ex:exposureModel a dlcro-met:MeasurementModel ;
+  dcterms:description "Synthetic derivation model; no physical performance claim."@en .
+
+
+ex:exposureProv a prov:Entity ;
+  prov:wasGeneratedBy ex:demoConstruction .
+
+
+ex:radiometer1 a dlcro-rmeter:DentalRadiometer ;
+  dcterms:identifier "SYNTH-RAD-01" ;
+  dcterms:description "Synthetic dental radiometer instance for semantic validation only."@en ;
+  dlcro-rmeter:hasDetector ex:detector1 ;
+  dlcro-rmeter:hasOpticalFilter ex:filter1 ;
+  dlcro-rmeter:hasAperture ex:aperture1 ;
+  dlcro-rmeter:hasSpectralResponsivity ex:responsivity1 ;
+  dlcro-rmeter:declaresIntendedQuantity ex:intendedIrradiance ;
+  dlcro-met:subjectOf ex:calibration1, ex:verification1 .
+
+
+ex:detector1 a dlcro-rmeter:Detector .
+ex:filter1 a dlcro-rmeter:OpticalFilter .
+ex:aperture1 a dlcro-rmeter:Aperture .
+ex:responsivity1 a dlcro-rmeter:SpectralResponsivity ;
+  dcterms:description "Synthetic responsivity descriptor; no calibration curve asserted."@en .
+ex:intendedIrradiance a dlcro-rmeter:IntendedQuantity ;
+  dcterms:description "Intended quantity: irradiance."@en .
+
+
+ex:measurement1 a dlcro-met:MeasurementActivity ;
+  dlcro-met:usesInstrument ex:radiometer1 ;
+  dlcro-met:producesIndication ex:indication1 ;
+  dlcro-ctx:hasGeometry ex:geometry1 ;
+  dlcro-core:hasProvenanceEntity ex:measurementProv .
+
+
+ex:indication1 a dlcro-met:Indication ;
+  dlcro-met:hasQuantityValue ex:indicationQV ;
+  dcterms:description "Synthetic instrument indication."@en .
+
+
+ex:indicationQV a qudt:QuantityValue ;
+  qudt:hasQuantityKind quantitykind:Irradiance ;
+  qudt:numericValue "1.0"^^xsd:decimal ;
+  qudt:unit unit:W-PER-M2 .
+
+
+ex:corrected1 a dlcro-met:CorrectedValue ;
+  dlcro-met:derivedFrom ex:indication1 ;
+  dlcro-met:hasQuantityValue ex:correctedQV .
+
+
+ex:correctedQV a qudt:QuantityValue ;
+  qudt:hasQuantityKind quantitykind:Irradiance ;
+  qudt:numericValue "1.0"^^xsd:decimal ;
+  qudt:unit unit:W-PER-M2 .
+
+
+ex:measurand1 a dlcro-met:Measurand ;
+  dcterms:description "Synthetic measurand representing irradiance at the declared measurement geometry."@en .
+
+
+ex:result1 a dlcro-met:MeasurementResult ;
+  dlcro-met:hasMeasurand ex:measurand1 ;
+  dlcro-met:derivedFrom ex:corrected1 ;
+  dlcro-met:hasQuantityValue ex:resultQV ;
+  dlcro-met:hasTraceability ex:traceability1 ;
+  dlcro-met:hasUncertainty ex:uncertainty1 ;
+  dlcro-met:hasUncertaintyBudget ex:budget1 ;
+  dlcro-met:appliesCorrection ex:mismatch1 ;
+  dlcro-core:hasProvenanceEntity ex:resultProv .
+
+
+ex:resultQV a qudt:QuantityValue ;
+  qudt:hasQuantityKind quantitykind:Irradiance ;
+  qudt:numericValue "1.0"^^xsd:decimal ;
+  qudt:unit unit:W-PER-M2 ;
+  dcterms:description "Synthetic sentinel result for semantic validation only."@en .
+
+
+ex:traceability1 a dlcro-met:TraceabilityStatement ;
+  dcterms:source ex:calibration1 ;
+  dcterms:description "Synthetic traceability statement used only to test explicit separation from PROV provenance."@en .
+
+
+ex:calibration1 a dlcro-met:CalibrationEvent ;
+  dcterms:source ex:syntheticReference ;
+  dcterms:description "Synthetic calibration-event record; not a valid calibration certificate."@en .
+
+
+ex:verification1 a dlcro-met:VerificationEvent ;
+  dcterms:source ex:syntheticReference ;
+  dcterms:description "Synthetic verification-event record."@en .
+
+
+ex:syntheticReference a prov:Entity ;
+  dcterms:title "Synthetic reference placeholder"@en .
+
+
+ex:uncertainty1 a dlcro-met:MeasurementUncertainty ;
+  dcterms:description "Synthetic uncertainty descriptor."@en .
+
+
+ex:budget1 a dlcro-met:UncertaintyBudget ;
+  dlcro-met:hasCombinedStandardUncertainty ex:uc1 ;
+  dlcro-met:hasExpandedUncertainty ex:U1 ;
+  dlcro-met:hasEffectiveDegreesOfFreedom ex:dof1 .
+
+
+ex:uc1 a dlcro-met:CombinedStandardUncertainty ;
+  qudt:numericValue "0.1"^^xsd:decimal ;
+  qudt:unit unit:W-PER-M2 .
+
+
+ex:U1 a dlcro-met:ExpandedUncertainty ;
+  qudt:numericValue "0.2"^^xsd:decimal ;
+  qudt:unit unit:W-PER-M2 ;
+  dlcro-met:hasCoverageFactor ex:k1 ;
+  dlcro-met:hasCoverageProbability ex:p1 .
+
+
+ex:k1 a dlcro-met:CoverageFactor ;
+  qudt:numericValue "2.0"^^xsd:decimal ;
+  qudt:unit unit:UNITLESS .
+
+
+ex:p1 a dlcro-met:CoverageProbability ;
+  qudt:numericValue "0.95"^^xsd:decimal ;
+  qudt:unit unit:UNITLESS .
+
+
+ex:dof1 a dlcro-met:EffectiveDegreesOfFreedom ;
+  qudt:numericValue "30.0"^^xsd:decimal ;
+  qudt:unit unit:UNITLESS .
+
+
+ex:mismatch1 a dlcro-met:SpectralMismatchCorrection ;
+  dcterms:source ex:spectrum1, ex:responsivity1 ;
+  dcterms:description "Synthetic correction record; no numerical correction factor is asserted."@en .
+
+
+ex:measurementProv a prov:Entity ;
+  prov:wasGeneratedBy ex:demoConstruction .
+
+
+ex:resultProv a prov:Entity ;
+  prov:wasGeneratedBy ex:measurement1 .
+
+
+ex:bundle1 a dlcro-core:EvidenceBundle ;
+  dlcro-core:hasEvidenceComponent ex:exposure1, ex:measurement1, ex:result1 ;
+  dcterms:description "Synthetic evidence bundle for end-to-end CQ validation."@en .

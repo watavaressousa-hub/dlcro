@@ -1,0 +1,87 @@
+﻿VAL-04 — FULL-ENGINE SHACL CONFIRMATION AND PRE-RELEASE REGRESSION GATE
+Ontology: DLCRO v0.1-dev
+Date: 26/09/2026
+Status: PASS.
+
+
+1. PURPOSE
+Confirmar o perfil SHACL mínimo do Pull 09 com um engine SHACL completo e repetir o regression bundle antes de liberar a montagem do Release Candidate.
+Este gate não altera a semântica da DLCRO. Ele confirma os artefatos já publicados e testa novamente as invariantes lógicas e as 15 Competency Questions Must.
+
+
+2. FULL SHACL ENGINE
+Engine executado: pySHACL 0.40.1, usando RDFLib 7.5.0.
+Configuração: inference='none'; advanced=false; meta_shacl=false; do_owl_imports=false.
+Como o runtime não possuía acesso de rede para pip, o núcleo do pySHACL 0.40.1 foi vendorizado diretamente do tag oficial v0.40.1 no repositório RDFLib/pySHACL por meio do conector GitHub.
+Foram utilizados os 51 módulos Python necessários à API de validação. CLI, servidor HTTP e extensão JavaScript não participam deste gate.
+A dependência OWL-RL não foi acionada, pois nenhuma inferência foi solicitada; o reasoner OWL da DLCRO permanece separado do SHACL gate.
+
+
+3. SHACL RESULTS
+Fixture válida demo_dlcro_v0.1.ttl: Conforms = true; 0 sh:ValidationResult.
+Fixture negativa demo_invalid.ttl: Conforms = false; 17 sh:ValidationResult.
+Os 17 resultados negativos coincidem numericamente com o validador determinístico do Pull 09, agora confirmados por um engine SHACL completo.
+Constraints exercitadas pelo perfil: sh:targetClass, sh:minCount, sh:class e sh:datatype.
+
+
+4. CONTROLLED READBACK
+Os três artefatos controlados do Pull 09 foram novamente baixados do Drive e seus SHA-256 coincidiram integralmente com PULL09_manifest.json:
+dlcro_minimal_shapes.ttl — 4ccbe58bda5793bb6850071bbe2e0ccc477a509502dc496b29ed0333dcf363fb.
+demo_dlcro_v0.1.ttl — 75936925706658aa70e6a2250ac466cdfb4de3635d16bce675df6417fd7cb5c8.
+demo_invalid.ttl — fae94fd82a327d2ac0cde39bc3fb10821b403b07c5d0b42f61511944680bf323.
+
+
+5. OWL/TURTLE REGRESSION
+Os 10 arquivos Turtle do skeleton foram novamente lidos diretamente do Drive.
+Grafo mesclado: 382 triplos.
+Import edges internos: 33.
+External owl:imports: 0.
+Import cycles: 0.
+owl:Restriction: 0.
+owl:equivalentClass: 0.
+owl:equivalentProperty: 0.
+owl:disjointWith: 0.
+owl:propertyChainAxiom: 0.
+owl:oneOf: 0.
+owl:sameAs: 0.
+Portanto, a expressividade lógica não aumentou desde VAL-01/VAL-03.
+
+
+6. SPARQL REGRESSION
+As 15 CQs Must foram executadas novamente sobre demo_dlcro_v0.1.ttl.
+Resultado: 15/15 compiladas e 15/15 com pelo menos um binding.
+Linhas por CQ: CQ-01=1; CQ-02=1; CQ-03=1; CQ-04=5; CQ-05=4; CQ-06=1; CQ-08=1; CQ-09=1; CQ-10=2; CQ-11=2; CQ-12=1; CQ-13=3; CQ-14=1; CQ-18=4; CQ-20=1.
+
+
+7. PUBLISHED REPRODUCIBILITY ARTIFACTS
+VAL04_full_engine_report.md — resumo reproduzível.
+VAL04_full_engine_report.json — relatório machine-readable completo.
+VAL04_pyshacl_valid_report.ttl — relatório SHACL bruto da fixture válida.
+VAL04_pyshacl_invalid_report.ttl — relatório SHACL bruto da fixture negativa.
+VAL04_sparql_regression.csv — resultados das 15 CQs Must.
+VAL04_full_gate.py — script executado.
+VAL04_manifest.json — hashes dos artefatos.
+Após upload, os artefatos foram baixados novamente do Drive e todos os SHA-256 do manifesto permaneceram idênticos.
+
+
+8. SHA-256 OF VALIDATION ARTIFACTS
+VAL04_pyshacl_valid_report.ttl — 4a53a3befd9bcdb7273ef3d6e47a83be519927771faee49ef0d2a44ee23be2be.
+VAL04_pyshacl_invalid_report.ttl — 9742b3c91003c8cd9dd5bed3232026853cd5977227ece33fe2c4a563a118e945.
+VAL04_full_engine_report.json — 55fa35fa8b44324d140826dd15f83dd70943b0e336b0b29294e1f5663013dc3a.
+VAL04_full_engine_report.md — 9236aed25921fb900bc66dc65f1cb2b6355fc56517800250239017c09c0f48d4.
+VAL04_sparql_regression.csv — 5ed0e6e5066ca3e79e1e7d984b112843bb684bba438a47d7acf1ba69faa80531.
+VAL04_full_gate.py — 9319c8bc3a93dacfca8da164e3696b35b227eb2df447b353a66f0a3df4e97070.
+
+
+9. NONCONFORMITIES AND ENVIRONMENT
+No semantic NC was found.
+ENV-P10-01 — pip/network DNS unavailable. Mitigation: official pySHACL v0.40.1 source retrieved through GitHub connector and vendored locally; engine version verified at runtime.
+This environmental constraint did not alter the validation logic or the controlled DLCRO artifacts.
+
+
+10. DECISION
+VAL-04 PASS.
+The full-engine SHACL confirmation criterion is satisfied.
+The pre-release technical gate is closed.
+REL-01 may be promoted to Ready for assembly of DLCRO v0.1-RC1.
+M4 remains the semantic-validation milestone achieved in Pull 09; VAL-04 is a confirming pre-release gate, not a new semantic milestone.

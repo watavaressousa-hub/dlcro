@@ -1,0 +1,162 @@
+@prefix dlcro-core: <https://w3id.org/dlcro/core#> .
+@prefix dlcro-ctx: <https://w3id.org/dlcro/context#> .
+@prefix dlcro-lcu: <https://w3id.org/dlcro/lcu#> .
+@prefix dlcro-met: <https://w3id.org/dlcro/metrology#> .
+@prefix dlcro-rad: <https://w3id.org/dlcro/radiometry#> .
+@prefix dlcro-rmeter: <https://w3id.org/dlcro/radiometer#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[] a sh:ValidationReport ;
+    sh:conforms false ;
+    sh:result [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/dlcro/demo-invalid#badExposure> ;
+            sh:resultMessage "Less than 1 values on ex:badExposure->dlcro-lcu:usesMode" ;
+            sh:resultPath dlcro-lcu:usesMode ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape [ sh:class dlcro-lcu:OperatingMode ;
+                    sh:minCount 1 ;
+                    sh:path dlcro-lcu:usesMode ] ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/dlcro/demo-invalid#badResult> ;
+            sh:resultMessage "Less than 1 values on ex:badResult->dlcro-met:hasTraceability" ;
+            sh:resultPath dlcro-met:hasTraceability ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape [ sh:class dlcro-met:TraceabilityStatement ;
+                    sh:minCount 1 ;
+                    sh:path dlcro-met:hasTraceability ] ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/dlcro/demo-invalid#badExposure> ;
+            sh:resultMessage "Less than 1 values on ex:badExposure->dlcro-rad:hasRadiantExposure" ;
+            sh:resultPath dlcro-rad:hasRadiantExposure ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape [ sh:minCount 1 ;
+                    sh:path dlcro-rad:hasRadiantExposure ] ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/dlcro/demo-invalid#badExposure> ;
+            sh:resultMessage "Less than 1 values on ex:badExposure->dlcro-lcu:usesTip" ;
+            sh:resultPath dlcro-lcu:usesTip ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape [ sh:class dlcro-lcu:LightGuideOrTip ;
+                    sh:minCount 1 ;
+                    sh:path dlcro-lcu:usesTip ] ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/dlcro/demo-invalid#badLCU> ;
+            sh:resultMessage "Less than 1 values on ex:badLCU->dlcro-lcu:hasDeliveryComponent" ;
+            sh:resultPath dlcro-lcu:hasDeliveryComponent ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape [ sh:class dlcro-lcu:LightGuideOrTip ;
+                    sh:minCount 1 ;
+                    sh:path dlcro-lcu:hasDeliveryComponent ] ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/dlcro/demo-invalid#badRadiometer> ;
+            sh:resultMessage "Less than 1 values on ex:badRadiometer->dlcro-rmeter:hasDetector" ;
+            sh:resultPath dlcro-rmeter:hasDetector ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape [ sh:class dlcro-rmeter:Detector ;
+                    sh:minCount 1 ;
+                    sh:path dlcro-rmeter:hasDetector ] ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/dlcro/demo-invalid#badExposure> ;
+            sh:resultMessage "Less than 1 values on ex:badExposure->dlcro-core:targets" ;
+            sh:resultPath dlcro-core:targets ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape [ sh:minCount 1 ;
+                    sh:path dlcro-core:targets ] ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/dlcro/demo-invalid#badRadiometer> ;
+            sh:resultMessage "Less than 1 values on ex:badRadiometer->dlcro-rmeter:hasSpectralResponsivity" ;
+            sh:resultPath dlcro-rmeter:hasSpectralResponsivity ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape [ sh:class dlcro-rmeter:SpectralResponsivity ;
+                    sh:minCount 1 ;
+                    sh:path dlcro-rmeter:hasSpectralResponsivity ] ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/dlcro/demo-invalid#badRadiometer> ;
+            sh:resultMessage "Less than 1 values on ex:badRadiometer->dlcro-rmeter:declaresIntendedQuantity" ;
+            sh:resultPath dlcro-rmeter:declaresIntendedQuantity ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape [ sh:class dlcro-rmeter:IntendedQuantity ;
+                    sh:minCount 1 ;
+                    sh:path dlcro-rmeter:declaresIntendedQuantity ] ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/dlcro/demo-invalid#badResult> ;
+            sh:resultMessage "Less than 1 values on ex:badResult->dlcro-met:hasUncertaintyBudget" ;
+            sh:resultPath dlcro-met:hasUncertaintyBudget ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape [ sh:class dlcro-met:UncertaintyBudget ;
+                    sh:minCount 1 ;
+                    sh:path dlcro-met:hasUncertaintyBudget ] ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/dlcro/demo-invalid#badMeasurement> ;
+            sh:resultMessage "Less than 1 values on ex:badMeasurement->dlcro-met:producesIndication" ;
+            sh:resultPath dlcro-met:producesIndication ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape [ sh:class dlcro-met:Indication ;
+                    sh:minCount 1 ;
+                    sh:path dlcro-met:producesIndication ] ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/dlcro/demo-invalid#badExposure> ;
+            sh:resultMessage "Less than 1 values on ex:badExposure->dlcro-rad:hasSpectralIrradiance" ;
+            sh:resultPath dlcro-rad:hasSpectralIrradiance ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape [ sh:minCount 1 ;
+                    sh:path dlcro-rad:hasSpectralIrradiance ] ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/dlcro/demo-invalid#badResult> ;
+            sh:resultMessage "Less than 1 values on ex:badResult->dlcro-met:hasMeasurand" ;
+            sh:resultPath dlcro-met:hasMeasurand ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape [ sh:class dlcro-met:Measurand ;
+                    sh:minCount 1 ;
+                    sh:path dlcro-met:hasMeasurand ] ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/dlcro/demo-invalid#badExposure> ;
+            sh:resultMessage "Less than 1 values on ex:badExposure->dlcro-ctx:hasGeometry" ;
+            sh:resultPath dlcro-ctx:hasGeometry ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape [ sh:minCount 1 ;
+                    sh:path dlcro-ctx:hasGeometry ] ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/dlcro/demo-invalid#badQV> ;
+            sh:resultMessage "Value is not Literal with datatype xsd:decimal" ;
+            sh:resultPath qudt:numericValue ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:DatatypeConstraintComponent ;
+            sh:sourceShape [ sh:datatype xsd:decimal ;
+                    sh:minCount 1 ;
+                    sh:path qudt:numericValue ] ;
+            sh:value "not-a-number" ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/dlcro/demo-invalid#badBundle> ;
+            sh:resultMessage "Less than 3 values on ex:badBundle->dlcro-core:hasEvidenceComponent" ;
+            sh:resultPath dlcro-core:hasEvidenceComponent ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape [ sh:minCount 3 ;
+                    sh:path dlcro-core:hasEvidenceComponent ] ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/dlcro/demo-invalid#badLCU> ;
+            sh:resultMessage "Less than 1 values on ex:badLCU->dlcro-lcu:hasOpticalSource" ;
+            sh:resultPath dlcro-lcu:hasOpticalSource ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape [ sh:class dlcro-lcu:OpticalSource ;
+                    sh:minCount 1 ;
+                    sh:path dlcro-lcu:hasOpticalSource ] ] .
+

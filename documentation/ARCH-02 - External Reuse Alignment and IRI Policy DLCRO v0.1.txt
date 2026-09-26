@@ -1,0 +1,128 @@
+﻿ARCH-02 — EXTERNAL REUSE, ALIGNMENT AND IRI POLICY DLCRO v0.1
+Status: baseline de alinhamento congelada no Pull 05.
+Objetivo: decidir import vs reuse-by-reference vs mapping para recursos externos e fixar a política de namespaces/IRIs antes de OWL-01.
+Princípio vinculante: módulos de domínio DLCRO podem depender de outros módulos DLCRO segundo o DAG do ARCH-01, mas não devem depender em tempo de carregamento de ontologias externas mutáveis.
+
+
+1. IDENTIDADE CANÔNICA E NAMESPACE
+Nome: Dental Light-Curing and Radiometry Ontology.
+Sigla: DLCRO.
+Prefixo local recomendado: dlcro para agregador; prefixos de módulo poderão ser dlcro-core, dlcro-lcu, dlcro-rad, dlcro-radiometer, dlcro-met, dlcro-ctx, dlcro-mat, dlcro-qi e dlcro-align.
+Namespace persistente-alvo: https://w3id.org/dlcro/.
+Ontology IRI base planejada: https://w3id.org/dlcro.
+IRIs de módulos: https://w3id.org/dlcro/core, /radiometry, /context, /metrology, /lcu, /radiometer, /material, /qi e /alignment.
+Version IRI planejado: https://w3id.org/dlcro/0.1.0-dev/<module> para a primeira skeleton; release pública deverá substituir dev por versão SemVer aprovada.
+W3ID ainda deve ser reservado; portanto, essa política congela a forma do IRI, mas não afirma que o redirecionamento já esteja ativo.
+
+
+2. REGRA GLOBAL DE DEPENDÊNCIA EXTERNA
+Nenhum módulo de domínio DLCRO usará owl:imports para ontologias externas na v0.1-dev.
+Termos externos estáveis serão usados por IRI direto (reuse-by-reference).
+Mappings formais entre classes/propriedades DLCRO e externas ficam em DLCRO-Alignment.
+Uma distribuição futura 'full/bundled' poderá fornecer snapshots externos ou import graph controlado para testes, sem alterar o núcleo canônico.
+Internal owl:imports entre módulos DLCRO são permitidos e devem seguir exatamente o DAG do ARCH-01.
+
+
+3. SSN/SOSA — DECISÃO
+Baseline normativa: Semantic Sensor Network Ontology / SOSA Recommendation de 19/10/2017.
+A edição SSN 2023 publicada como Working Draft em 24/09/2026 será monitorada, mas não é dependência normativa da v0.1.
+Estratégia: MAPPING em DLCRO-Alignment; sem owl:imports externo.
+Mappings formais aprovados v0.1: DLCRO:MeasurementActivity rdfs:subClassOf sosa:Observation; DLCRO:Detector rdfs:subClassOf sosa:Sensor; DLCRO:DentalRadiometer rdfs:subClassOf ssn:System; DLCRO:LightCuringUnit rdfs:subClassOf ssn:System.
+Não declarar LightCuringUnit owl:equivalentClass sosa:Actuator nem ExposureEvent owl:equivalentClass sosa:Actuation nesta release; a equivalência seria mais forte que a evidência conceitual disponível.
+Namespaces de referência: http://www.w3.org/ns/sosa/ e http://www.w3.org/ns/ssn/.
+
+
+4. QUDT 3.5.2 — DECISÃO
+Estratégia: REUSE-BY-REFERENCE; sem owl:imports.
+Usar diretamente qudt:QuantityValue, qudt:hasQuantityKind, qudt:unit, qudt:numericValue e os quantity kinds aprovados em MET-01.
+Bindings congelados: quantitykind:RadiantFlux, quantitykind:Irradiance, quantitykind:SpectralIrradiance e quantitykind:RadiantExposure.
+Usar namespaces não versionados dos termos QUDT em dados/axiomas e registrar QUDT 3.5.2 como versão de baseline/provenance da release.
+Não replicar unidades ou quantity kinds como classes DLCRO.
+OM 2.0 permanece apenas crosswalk secundário; nenhuma equivalência QUDT↔OM será emitida na v0.1 sem auditoria individual.
+
+
+5. PROV-O — DECISÃO
+Baseline: W3C Recommendation de 30/04/2013.
+Estratégia: REUSE-BY-REFERENCE + MAPPING; sem owl:imports.
+Usar diretamente prov:Entity, prov:Activity, prov:Agent e propriedades de provenance quando suficientes.
+Mappings aprovados: ExposureEvent, MeasurementActivity, CalibrationEvent, VerificationEvent e MaintenanceEvent são candidatos formais a rdfs:subClassOf prov:Activity em DLCRO-Alignment; EvidenceBundle e artefatos digitais/resultados informacionais podem ser relacionados a prov:Entity sem transformar metrological traceability em provenance.
+PROV-O nunca satisfaz sozinho CQ-11 de rastreabilidade metrológica.
+
+
+6. SI REFERENCE POINT 1.0.0 — DECISÃO
+Estratégia: AUTHORITATIVE REFERENCE / MAPPING; sem importação.
+Usar o SI Reference Point como referência digital autoritativa ao SI e âncora de interoperabilidade para unidades/identificadores SI quando mappings estiverem disponíveis e auditados.
+QUDT permanece o pattern operacional de quantity/value/unit da DLCRO.
+Não duplicar unidade SI localmente nem declarar equivalências automáticas entre todos os identificadores QUDT e SIRP sem verificação por termo.
+
+
+7. D-SI, DCC E SIS — DECISÃO
+Estratégia: INTEROPERABILITY TARGET / MAPPING.
+D-SI e DCC não serão importados como se todo o ecossistema fosse uma ontologia OWL.
+Resultados, incertezas e certificados DLCRO devem poder ser transformados/mapeados para estruturas digitais de metrologia; os mappings exatos serão adicionados somente quando IRIs/esquemas e campos forem testados.
+SIS pode ser mapeado seletivamente quando oferecer termos RDF estáveis e úteis; não é dependência obrigatória da v0.1.
+
+
+8. OMT v1.0 — DECISÃO
+Estratégia: CANDIDATE MAPPING, sem import.
+A publicação de Wang et al. (2024) demonstra uma ontology for measurement terminology aplicada a Digital Calibration Certificates, mas a DLCRO não adotará owl:equivalentClass/properties globais nesta fase.
+Termos VIM-like locais já congelados em MET-01 poderão receber mappings individuais em release posterior após auditoria de IRI, licença, definições e cardinalidades.
+
+
+9. OM 2.0 — DECISÃO
+Estratégia: SECONDARY CROSSWALK ONLY.
+QUDT é o modelo primário de grandezas/unidades. OM não será importada nem usada em paralelo como modelo primário.
+Mappings OM serão considerados somente para interoperabilidade com datasets externos que já utilizem OM.
+
+
+10. DCTERMS E SKOS — DECISÃO
+Estratégia: REUSE-BY-REFERENCE.
+dcterms pode ser usado para metadados de título, descrição, criador, fonte, licença e datas quando apropriado.
+SKOS pode ser usado para anotações/mappings conceituais fracos quando rdfs:subClassOf, equivalentClass ou equivalentProperty seriam semanticamente excessivos.
+Não importar os vocabulários completos.
+
+
+11. MATERIAL/QUÍMICA — DECISÃO
+Nenhuma ontologia química/biomédica é dependência obrigatória da DLCRO v0.1.
+Estratégia: DEFERRED MAPPING.
+PhotoinitiatingSystem, Photoinitiator e Coinitiator permanecem termos locais mínimos até pesquisa dirigida por entidades e necessidades reais de interoperabilidade.
+Não criar equivalências químicas sem identificadores de substância/estrutura e fonte autoritativa.
+
+
+12. ISO 10650:2026 E ISO 4049:2019
+São fontes normativas/documentais, não ontologias a importar.
+Estratégia: REFERENCE-AS-DOCUMENT via DLCRO-QI.
+StandardDocument, Requirement e ApplicabilityAssertion devem referenciar edição, cláusula e fonte quando o texto integral institucional for usado.
+Presença de requisito não implica ConformityAssertion verdadeira.
+
+
+13. DLCRO-ALIGNMENT — CONTEÚDO MÍNIMO v0.1
+O módulo Alignment deve conter somente mappings aprovados e metadados da decisão; não deve possuir conceitos de domínio.
+Cada mapping deverá registrar recurso externo, versão/baseline considerada, força semântica usada (subClassOf, subPropertyOf, exact/close match ou equivalence), justificativa e fonte.
+owl:equivalentClass e owl:equivalentProperty exigem revisão humana específica e não serão usados como atalho.
+Mappings experimentais devem ser separados dos mappings aprovados, preferencialmente por status/anotação e fixtures de teste.
+
+
+14. INTERNAL IMPORT GRAPH
+DLCRO-Radiometry owl:imports DLCRO-Core.
+DLCRO-Context owl:imports DLCRO-Core e DLCRO-Radiometry.
+DLCRO-Metrology owl:imports DLCRO-Core, DLCRO-Radiometry e DLCRO-Context.
+DLCRO-LCU owl:imports DLCRO-Core, DLCRO-Radiometry e DLCRO-Context.
+DLCRO-Radiometer owl:imports DLCRO-Core, DLCRO-Radiometry, DLCRO-Context e DLCRO-Metrology.
+DLCRO-Material owl:imports DLCRO-Core, DLCRO-Radiometry e DLCRO-Metrology.
+DLCRO-QI owl:imports DLCRO-Core.
+DLCRO-Alignment owl:imports todos os módulos DLCRO necessários aos mappings, mas nenhum módulo de domínio importa Alignment.
+O agregador https://w3id.org/dlcro pode importar os módulos de domínio; Alignment poderá ser incluído no pacote completo, mas a distribuição core poderá ser oferecida sem ele.
+
+
+15. VERSIONAMENTO E REPRODUTIBILIDADE
+Prefixos/term IRIs externos devem apontar para namespaces canônicos não versionados quando essa for a prática do recurso; a versão externa usada na validação deve ser registrada em metadata/manifest.
+Snapshots de dependências externas, quando necessários para QA reprodutível, devem ficar no pacote de validação/release e não redefinir os IRIs originais.
+Qualquer mudança futura de baseline externa que altere inferências exige novo item de governança e reasoner regression test.
+
+
+16. CRITÉRIO DE ACEITAÇÃO
+Cada recurso externo prioritário possui decisão explícita: reuse-by-reference, mapping, authoritative reference, interoperability target, secondary crosswalk, deferred mapping ou reference-as-document.
+O namespace DLCRO e o internal import graph estão definidos.
+O conteúdo mínimo de DLCRO-Alignment está congelado.
+ARCH-02 atende ao backlog e desbloqueia OWL-01.

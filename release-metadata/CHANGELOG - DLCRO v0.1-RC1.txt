@@ -1,0 +1,9 @@
+﻿DLCRO CHANGELOG — v0.1-RC1
+Identity: OFRD renamed to DLCRO — Dental Light-Curing and Radiometry Ontology before durable IRI freeze.
+Architecture: 9 semantic modules + default aggregator; external owl:imports prohibited; mappings centralized in Alignment.
+Radiometry/metrology: RadiantFlux, Irradiance, SpectralIrradiance and RadiantExposure bindings; explicit indication/corrected value/measurement result/measurand distinctions.
+Material: minimal material/photoinitiator/absorption/attenuation/spectral compatibility model.
+Interoperability: selective ChEBI and OHD alignment policy; no complete chemical or clinical ontology embedded.
+Validation: 10/10 Turtle parse; 382 merged triples; VAL-04 pySHACL 0.40.1 PASS; 15/15 Must CQs non-empty on demo KG.
+Release safeguards: no cardinalities, restrictions, disjointness, property chains, nominals or strong equivalence axioms.
+Known release condition: W3ID reservation remains pending.

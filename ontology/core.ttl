@@ -13,8 +13,8 @@
 
 
 <https://w3id.org/dlcro/core> a owl:Ontology ;
-  owl:versionIRI <https://w3id.org/dlcro/0.1.0-dev/core> ;
-  owl:versionInfo "0.1.0-dev" ;
+  owl:versionIRI <https://w3id.org/dlcro/0.1.0/core> ;
+  owl:versionInfo "0.1.0" ;
   dcterms:title "DLCRO Core"@en .
 dlcro-core:EvidenceBundle a owl:Class ; rdfs:label "evidence bundle"@en ; skos:altLabel "pacote de evidências"@pt-BR .
 dlcro-core:ExposureTarget a owl:Class ; rdfs:label "exposure target"@en ; skos:altLabel "alvo da exposição"@pt-BR .

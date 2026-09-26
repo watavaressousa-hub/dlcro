@@ -3,10 +3,10 @@
 
 
 <https://w3id.org/dlcro> a owl:Ontology ;
-  owl:versionIRI <https://w3id.org/dlcro/0.1.0-dev> ;
-  owl:versionInfo "0.1.0-dev" ;
+  owl:versionIRI <https://w3id.org/dlcro/0.1.0> ;
+  owl:versionInfo "0.1.0" ;
   dcterms:title "Dental Light-Curing and Radiometry Ontology (DLCRO)"@en ;
-  dcterms:description "Default DLCRO v0.1-dev aggregator. Imports DLCRO domain modules only; no external ontologies are owl:imported."@en ;
+  dcterms:description "Default DLCRO v0.1.0 aggregator. Imports DLCRO domain modules only; no external ontologies are owl:imported."@en ;
   owl:imports
     <https://w3id.org/dlcro/core>,
     <https://w3id.org/dlcro/radiometry>,

@@ -14,8 +14,8 @@
 
 
 <https://w3id.org/dlcro/radiometry> a owl:Ontology ;
-  owl:versionIRI <https://w3id.org/dlcro/0.1.0-dev/radiometry> ;
-  owl:versionInfo "0.1.0-dev" ;
+  owl:versionIRI <https://w3id.org/dlcro/0.1.0/radiometry> ;
+  owl:versionInfo "0.1.0" ;
   dcterms:title "DLCRO Radiometry"@en ;
   owl:imports <https://w3id.org/dlcro/core> .
 dlcro-rad:BeamProfile a owl:Class ; rdfs:label "beam profile"@en ; skos:altLabel "perfil espacial do feixe"@pt-BR .

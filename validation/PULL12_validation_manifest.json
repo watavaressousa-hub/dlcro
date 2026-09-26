@@ -1,0 +1,18 @@
+{
+  "gate": "PULL12_STABLE_CANDIDATE_FULL_REGRESSION",
+  "pass": true,
+  "engine": {
+    "pyshacl": "0.40.1",
+    "rdflib": "7.5.0",
+    "pyshacl_source_commit": "469cca7a22a078b36c167c1e8dadecf5e5ec6c75",
+    "pyshacl_vendor_module_count": 51
+  },
+  "artifacts": {
+    "PULL12_pyshacl_valid_report.ttl": "4a53a3befd9bcdb7273ef3d6e47a83be519927771faee49ef0d2a44ee23be2be",
+    "PULL12_pyshacl_invalid_report.ttl": "5600df4569f836f39497f80631bbf0cd1fd9d9aa7d5f3c27bc80e291722241d3",
+    "PULL12_full_regression_report.json": "10d05fbb37d84953c1daabae095bcc65c2491f613ca4560c31d512c5e6cb3601",
+    "PULL12_full_regression_report.md": "fed9e46df1656d8c63d4d6d5640a7d3a94d50fd1e106ebb3467426f44491ce23",
+    "PULL12_sparql_regression.csv": "e20e5a12b81d65261b58b040efd8c20730ee8468e62bd236bdf45f1610e378e8",
+    "PULL12_full_regression_gate.py": "6e3dd6f5372f742739ac50a089493404572664d28e834fc39451c1a33226e1be"
+  }
+}

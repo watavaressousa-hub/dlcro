@@ -1,0 +1,89 @@
+MAN-01 — DLCRO v0.1 MANUSCRIPT STRUCTURE
+Status: scientific outline frozen in Pull 04. This document organizes the manuscript but does not anticipate results that have not yet been obtained.
+Editorial objective: present DLCRO as a reuse-first semantic/computational contribution that integrates dental light-curing units, radiometers, radiometry, metrology, material, and evidence while respecting the SCI-01 claim ceiling.
+
+1. PROVISIONAL TITLE
+English: DLCRO: A reuse-first modular ontology for dental light-curing units, radiometers, and radiometric-metrological evidence.
+Portuguese: DLCRO: uma ontologia modular reuse-first para fotopolimerizadores, radiômetros dentais e evidência radiométrico-metrológica.
+The final title should mention validation, a knowledge graph, or demonstrated interoperability only after the corresponding results have been completed.
+
+2. ABSTRACT — STRUCTURE
+Background: fragmentation of LCU, exposure, radiometer, geometry, spectrum, material, and metrological-evidence data.
+Objective: develop and semantically evaluate a modular OWL 2 ontology that integrates these elements without collapsing indication, result, measurand, geometry, uncertainty, and traceability.
+Methods: source-guided scoping, reuse-first development, Competency Questions, modular architecture, OWL 2, reasoner, SPARQL, SHACL, and a demonstrative case.
+Results: fill only after implementation/validation; report modules, terms/reuse, CQ coverage, logical/SHACL/SPARQL tests, and demonstration without inventing metrics.
+Conclusion: limit the conclusion to what the semantic/computational tests actually demonstrate.
+
+3. INTRODUCTION
+3.1 Context of dental light-curing and the need to interpret optical output using spectrum, geometry, and time.
+3.2 Limitations of isolated radiometer readings and the distinction between indication and measurement result.
+3.3 Fragmentation across dental sources, radiometry, metrology, materials, and quality.
+3.4 Related work: SSN/SOSA, QUDT, PROV-O, digital SI, and metrology resources; make explicit that the contribution is not a claim of universal absence of ontologies.
+3.5 Specific integration gap and SCI-01 Research Question.
+3.6 Article contributions: modular model, domain integration, CQs/validation, reuse-first policy, and demonstrative scenario.
+
+4. MATERIALS AND METHODS
+4.1 Development process and governance: Scrumban, Pulls, WIP, Definition of Ready/Done, and progressive freezing of baselines.
+4.2 Domain sources and terminology: xfotopol literature, Radiometry_merged, Metrology_merged, and relevant standards, individually identifying the works used.
+4.3 Scientific scope and claim ceiling: RQ, scope inclusion/exclusion, and prohibited claims.
+4.4 Stakeholders, use cases, and Competency Questions: eight use cases and CQ v1.
+4.5 Reuse-first analysis: external resources, reuse/import/mapping criteria; final details after ARCH-02.
+4.6 Conceptual models: LCU/Exposure, Radiometer/Measurement, Radiometry/Metrology, and Material/Photoinitiator.
+4.7 Modular architecture: Core, Radiometry, Context, Metrology, LCU, Radiometer, Material, QI, and Alignment.
+4.8 OWL 2 implementation: ontology/version IRIs, namespace, modules, axioms, and documentation; fill after OWL-01.
+4.9 Validation protocol: OWL 2 profile/reasoner, SPARQL for CQs, SHACL for profiles, and positive/negative fixtures.
+4.10 Demonstrative knowledge graph: LCU–exposure–radiometer–material–evidence scenario, with the origin and nature of the data clearly declared.
+
+5. RESULTS — STRUCTURE WITHOUT ANTICIPATING DATA
+5.1 Ontology architecture and module dependency graph.
+5.2 Reuse and alignment decisions.
+5.3 Concept/relation inventory and documentation coverage.
+5.4 Competency Question coverage.
+5.5 Logical/profile validation results.
+5.6 SPARQL and SHACL validation results.
+5.7 Demonstrative knowledge graph and end-to-end query examples.
+No number of classes, axioms, passed tests, or coverage values should be filled before they are measured in the release candidate.
+
+6. DISCUSSION
+6.1 Principal semantic contribution: domain-specific integration of dental light-curing with radiometric and metrological foundations.
+6.2 Why indication is not measurement truth: implications for radiometer representation.
+6.3 Why spectrum, geometry, and spatial distribution matter: connection with the LCU literature.
+6.4 Material/photoinitiator context: usefulness of spectral compatibility without turning it into an automatic predictor of cure.
+6.5 Reuse-first and interoperability: benefits and limitations of SSN/SOSA, QUDT, PROV-O, and the digital-metrology ecosystem.
+6.6 Validation significance: distinguish parsing, logical consistency, SHACL completeness, and the ability to answer CQs.
+6.7 Limitations: absence of automatic clinical validation; minimal chemical scope; dependence on data quality; external mappings remain subject to evolution; open-world knowledge.
+6.8 Future work: validation with real data, additional alignments, DCC/digital metrology, expansion of materials, and quality profiles.
+
+7. CONCLUSION
+Answer the Research Question directly only with evidence produced by implementation and validation.
+Do not conclude that DLCRO improves clinical outcomes, that a radiometer is suitable for any use, or that a device/material is conforming.
+Emphasize, if demonstrated, semantic interoperability, queryability, provenance traceability, and integration of metrological evidence.
+
+8. SUPPLEMENTARY MATERIALS
+Ontology modules in Turtle/RDF.
+Competency Questions and SPARQL queries.
+SHACL shapes and positive/negative fixtures.
+Example knowledge graph.
+Reuse/alignment matrix.
+Concept and relation inventories.
+Reference master and source documentation.
+Reasoner/profile reports and reproducible QA scripts.
+
+9. PLANNED FIGURES AND TABLES
+Figure 1 — Problem chain: LCU → Exposure → Measurement/Radiometer → Material → Evidence.
+Figure 2 — DLCRO modular architecture and directed dependencies.
+Figure 3 — Distinctions: emission spectrum × radiometer responsivity × photoinitiator absorption spectrum.
+Figure 4 — Demonstrative knowledge graph / end-to-end query path.
+Table 1 — Modules, ownership, and external resources.
+Table 2 — Competency Questions mapped to modules/validation.
+Table 3 — Reuse decisions and alignments.
+Table 4 — Validation summary; fill only with results actually obtained.
+
+10. EDITORIAL CLAIM CEILING
+Allowed when demonstrated: semantic formalization, modularity, reuse, logical consistency, queryability, CQ coverage, SHACL profile validation, provenance integration, and representation of metrological evidence.
+Not allowed without additional studies: clinical accuracy, cure adequacy, degree-of-conversion prediction, depth-of-cure prediction, technology superiority, regulatory conformity, validity of a real calibration, or fitness for purpose.
+Terms such as “validated ontology” must always be qualified by the type of validation performed.
+
+11. DECISION
+The outline separates Methods, Results, and Discussion and limits claims to the semantic/computational level, satisfying the backlog item.
+MAN-01 remains frozen as the v0.1 writing structure; full manuscript writing will be activated after sufficient implementation/validation results are available.

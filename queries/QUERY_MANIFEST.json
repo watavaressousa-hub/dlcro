@@ -1,0 +1,113 @@
+{
+  "source": "Backlog DLCRO - Scrumban / SPARQL_CQ_Suite",
+  "source_spreadsheet_id": "1-NW4rWlySnojLljetonhJ3dc6pg191jFTzxQETqbxtY",
+  "priority": "Must",
+  "count": 15,
+  "queries": {
+    "CQ-01": {
+      "file": "CQ-01.rq",
+      "sha256": "d81a5fb9ce8da65972e72d8e18bb3aed7f6e4f65107780f59e2aa60faf06bb12",
+      "expected_variables": "exposure,lcu,mode,tip",
+      "syntax_runtime_validation": "PASS",
+      "expected_result": "0 rows on schema-only graph; populated demo must return device+mode+tip"
+    },
+    "CQ-02": {
+      "file": "CQ-02.rq",
+      "sha256": "957f7a4ed42ce813de8e68c30181e84a17308b5e4d58a154c140e11fa81b2432",
+      "expected_variables": "lcu,source,deliveryComponent",
+      "syntax_runtime_validation": "PASS",
+      "expected_result": "0 rows on schema-only graph; demo must return source/configuration"
+    },
+    "CQ-03": {
+      "file": "CQ-03.rq",
+      "sha256": "5c9ac8894d36a8f94dcde00a12b187f6de218b629272dd2fc180dd71d5e23de7",
+      "expected_variables": "event,spectralObject,kind,independentVariable",
+      "syntax_runtime_validation": "PASS",
+      "expected_result": "0 rows on schema-only graph; demo must return spectral object and wavelength axis when present"
+    },
+    "CQ-04": {
+      "file": "CQ-04.rq",
+      "sha256": "d07e8b39350139747a1c170020d8817669740f32f1286b922f776c612e1dee29",
+      "expected_variables": "entity,quantityValue,quantityKind,value,unit,geometry",
+      "syntax_runtime_validation": "PASS",
+      "expected_result": "0 rows on schema-only graph; demo must expose explicit quantity kind/value/unit"
+    },
+    "CQ-05": {
+      "file": "CQ-05.rq",
+      "sha256": "d9e53d0ec96b3e9a8a90fbe6689047d805f8181628ff836b9d589b356c846379",
+      "expected_variables": "entity,geometry,geometryProperty,geometryValue",
+      "syntax_runtime_validation": "PASS",
+      "expected_result": "0 rows on schema-only graph; demo must expose geometry node and available descriptors"
+    },
+    "CQ-06": {
+      "file": "CQ-06.rq",
+      "sha256": "e92f287aefb9b06fbdbc5e8bb58d9edfb295902cd8e7cfbd60ce5c618c10f2d9",
+      "expected_variables": "exposure,radiantExposure,source,model",
+      "syntax_runtime_validation": "PASS",
+      "expected_result": "0 rows on schema-only graph; demo must return He and derivation/model if present"
+    },
+    "CQ-08": {
+      "file": "CQ-08.rq",
+      "sha256": "8e23b587828e6613536af1faf93e631da49ed22f12a1f7fe7b6ad86875964643",
+      "expected_variables": "activity,radiometer,indication,intendedQuantity",
+      "syntax_runtime_validation": "PASS",
+      "expected_result": "0 rows on schema-only graph; demo must identify instrument/activity/indication"
+    },
+    "CQ-09": {
+      "file": "CQ-09.rq",
+      "sha256": "1abe0ca755ec334ea47da6cefec02f9c3040baca0581b2d3ba7369f13c610e64",
+      "expected_variables": "radiometer,detector,filter,aperture,responsivity",
+      "syntax_runtime_validation": "PASS",
+      "expected_result": "0 rows on schema-only graph; demo must expose instrumental configuration"
+    },
+    "CQ-10": {
+      "file": "CQ-10.rq",
+      "sha256": "3c7dcb330a8d7f44e864c95bb5a4514551bfffab741e7aa9f083f996fb81a0a2",
+      "expected_variables": "radiometer,event,eventType",
+      "syntax_runtime_validation": "PASS",
+      "expected_result": "0 rows on schema-only graph; demo must distinguish calibration/verification"
+    },
+    "CQ-11": {
+      "file": "CQ-11.rq",
+      "sha256": "3bc2cbac607d8432722899b8e14dff6d7059efb2f916d1c6ccde5b9394e84456",
+      "expected_variables": "result,traceability,predicate,object",
+      "syntax_runtime_validation": "PASS",
+      "expected_result": "0 rows on schema-only graph; demo must expose explicit traceability statement"
+    },
+    "CQ-12": {
+      "file": "CQ-12.rq",
+      "sha256": "402a98db2842fd4b3145336d78358c1fe744b0f244186db99e56062f7ef7c3e7",
+      "expected_variables": "result,uncertainty,budget,uc,expanded,k,p,dof",
+      "syntax_runtime_validation": "PASS",
+      "expected_result": "0 rows on schema-only graph; demo must expose available uncertainty structure"
+    },
+    "CQ-13": {
+      "file": "CQ-13.rq",
+      "sha256": "442a8c8dcbdd6533ac33061ab7b34094b2455513140f45d6f18eaed7e18f32a9",
+      "expected_variables": "result,correction,predicate,object",
+      "syntax_runtime_validation": "PASS",
+      "expected_result": "0 rows on schema-only graph; demo must expose mismatch correction if applicable"
+    },
+    "CQ-14": {
+      "file": "CQ-14.rq",
+      "sha256": "a22af2e96100ba01f2222409a581b04dea3d5336977d24c470b35d38ef34f30f",
+      "expected_variables": "result,measurand,correctedValue,indication",
+      "syntax_runtime_validation": "PASS",
+      "expected_result": "0 rows on schema-only graph; demo must preserve distinction/derivation chain"
+    },
+    "CQ-18": {
+      "file": "CQ-18.rq",
+      "sha256": "52c724497d9d75a47312d25d215cfc296cf11ad9147fd0311d7cbdfe4a0776ca",
+      "expected_variables": "entity,provenanceEntity,activity,agent",
+      "syntax_runtime_validation": "PASS",
+      "expected_result": "0 rows on schema-only graph; demo must expose provenance separately from traceability"
+    },
+    "CQ-20": {
+      "file": "CQ-20.rq",
+      "sha256": "0bc23ffe3a3d67e1f8caf2b66b8acd0cdfb9d46b13e464bf04672c7d4d72b659",
+      "expected_variables": "bundle,lcu,exposure,measurementActivity,radiometer,result,target",
+      "syntax_runtime_validation": "PASS",
+      "expected_result": "0 rows on schema-only graph; demo must reconstruct end-to-end bundle"
+    }
+  }
+}

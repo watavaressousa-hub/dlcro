@@ -10,7 +10,7 @@
   "branch": "release/v0.1.0",
   "frozen_rc1_ancestor": "1428abdeb3f043a70ebe62250abf56d7f56720cc",
   "validated_branch_base_commit": "7536a2e063351d6e6607195165978c6cf8402c79",
-  "git_commit": "PENDING_REPOSITORY_WRITE_AND_READBACK",
+  "git_commit": "PENDING_CITATION_METADATA_WRITE_AND_READBACK",
   "git_tag": "PENDING_AFTER_W3ID_AND_FINAL_REGRESSION",
   "namespace": "https://w3id.org/dlcro/",
   "ontology_iri": "https://w3id.org/dlcro",
@@ -128,18 +128,29 @@
     "validation_software": "MIT"
   },
   "citation": {
-    "status": "pending NC-P12-05",
+    "status": "authorship explicitly established by project authority on 2026-09-26; repository write/readback pending",
     "doi": null,
-    "authors": "NOT_INFERRED"
+    "authors": [
+      "Willian Anderson Tavares de Sousa",
+      "José Mauro Granjeiro",
+      "Iakyra Borrakuens Couceiro",
+      "Geraldo Roberto Carvalho Cernicchiaro",
+      "Wilson de Souza Melo Júnior",
+      "Thales Ribeiro de Magalhães Filho",
+      "Leonardo da Cunha Boldrini Pereira"
+    ],
+    "first_author": "Willian Anderson Tavares de Sousa",
+    "last_author": "Leonardo da Cunha Boldrini Pereira",
+    "citation_file": "CITATION.cff"
   },
   "known_limitations": [
     "No automatic claim of adequate cure or clinical performance.",
     "No automatic regulatory conformity, calibration-validity, equipment-performance or fitness-for-purpose claim.",
-    "W3ID activation is external and remains pending.",
-    "CITATION.cff authorship awaits explicit project-authority definition."
+    "W3ID activation is external and remains pending."
   ],
   "nc_status": {
     "NC-P12-06": "CLOSED — full pySHACL 0.40.1 rerun reproduced",
-    "NC-P12-05": "OPEN — CITATION.cff authorship requires explicit project-authority definition"
+    "NC-P12-05": "READY TO CLOSE — seven-author order established by explicit project authority; repository write/readback pending",
+    "NC-P12-07": "CLOSED — LF checksum reconciliation completed and independently read back"
   }
 }

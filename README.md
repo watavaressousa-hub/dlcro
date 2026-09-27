@@ -39,7 +39,17 @@ Ontology modules, RDF example data, SHACL, SPARQL and documentation are released
 
 ## Citation
 
-`CITATION.cff` is intentionally pending until project-authority authorship is explicitly established. No author is inferred from repository ownership.
+Canonical citation metadata are provided in `CITATION.cff`. Author order was established by explicit project authority:
+
+1. Willian Anderson Tavares de Sousa
+2. José Mauro Granjeiro
+3. Iakyra Borrakuens Couceiro
+4. Geraldo Roberto Carvalho Cernicchiaro
+5. Wilson de Souza Melo Júnior
+6. Thales Ribeiro de Magalhães Filho
+7. Leonardo da Cunha Boldrini Pereira
+
+Willian Anderson Tavares de Sousa is the first author and Leonardo da Cunha Boldrini Pereira is the last author.
 
 ## Limitations
 

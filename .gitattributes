@@ -7,3 +7,4 @@
 *.py text eol=lf
 LICENSE text eol=lf
 LICENSE-* text eol=lf
+*.cff text eol=lf

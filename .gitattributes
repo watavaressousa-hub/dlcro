@@ -1,0 +1,9 @@
+*.md text eol=lf
+*.txt text eol=lf
+*.ttl text eol=lf
+*.rq text eol=lf
+*.csv text eol=lf
+*.json text eol=lf
+*.py text eol=lf
+LICENSE text eol=lf
+LICENSE-* text eol=lf

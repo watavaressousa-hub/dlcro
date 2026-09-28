@@ -1,0 +1,11 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+PREFIX dlcro-core: <https://w3id.org/dlcro/core#>
+PREFIX dlcro-rad: <https://w3id.org/dlcro/radiometry#>
+PREFIX dlcro-ctx: <https://w3id.org/dlcro/context#>
+PREFIX dlcro-met: <https://w3id.org/dlcro/metrology#>
+PREFIX dlcro-lcu: <https://w3id.org/dlcro/lcu#>
+PREFIX dlcro-rmeter: <https://w3id.org/dlcro/radiometer#>
+PREFIX dlcro-mat: <https://w3id.org/dlcro/material#>
+SELECT ?radiometer ?event ?eventType WHERE { ?radiometer a dlcro-rmeter:DentalRadiometer ; dlcro-met:subjectOf ?event . VALUES ?eventType { dlcro-met:CalibrationEvent dlcro-met:VerificationEvent } ?event a ?eventType . }

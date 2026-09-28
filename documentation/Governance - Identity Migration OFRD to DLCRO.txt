@@ -1,0 +1,36 @@
+IDENTITY MIGRATION — OFRD → DLCRO
+Decision date: 2026-09-26.
+Status: binding governance decision for the live baseline before Pull 05 / ARCH-02.
+Canonical name: Dental Light-Curing and Radiometry Ontology.
+Canonical acronym: DLCRO.
+Planned RDF prefix: dlcro.
+Legacy acronym: OFRD — preserved only in historical snapshots from Pulls 00–04 and audit references that describe the previous state.
+
+1. STRATEGIC RATIONALE
+The first release targets international adoption and communication. An acronym derived from the Portuguese name would create asymmetry among title, RDF prefixes, namespaces, documentation, and citations.
+DLCRO is derived directly from the canonical English name, preserves the central domain — dental light-curing + radiometry — and is short enough for prefixes, namespaces, repositories, and citations.
+A targeted search did not identify an established ontology with the exact name Dental Light-Curing and Radiometry Ontology or consolidated use of DLCRO as an ontology name. This reduces, but does not eliminate, future collision risk.
+
+2. MIGRATION SCOPE
+Live documents, module names, backlog, README, project plan, conceptual specification, and OWL folder move to DLCRO.
+The subproject root folder becomes 05_DLCRO_Dental_Light_Curing_and_Radiometry_Ontology.
+The folder 02_OFRD_OWL2 becomes 02_DLCRO_OWL2.
+The Modulos_OFRD sheet becomes Modulos_DLCRO.
+Pulls 00–04 remain historical snapshots and may contain OFRD in text/title; they must not be rewritten retroactively.
+
+3. NAMESPACE AND IDENTIFIERS
+Target persistent namespace: https://w3id.org/dlcro/.
+This address is an architectural intention and is not yet declared registered/resolving. Actual reservation must be completed in W3ID before a stable public release.
+Planned base Ontology IRI: https://w3id.org/dlcro.
+Planned modules: https://w3id.org/dlcro/core, /radiometry, /context, /metrology, /lcu, /radiometer, /material, /qi, and /alignment.
+Planned Version IRI for the first development release: https://w3id.org/dlcro/0.1.0-dev/<module>. The exact form will be materialized in OWL-01.
+Local terms must use stable IRIs derived from their owning module; no local OFRD IRI will be emitted because OWL implementation has not yet begun.
+
+4. COMPATIBILITY AND LEGACY
+Because no public OWL release exists under OFRD, there will be no owl:deprecatedClass, owl:equivalentClass, or semantic redirects for nonexistent OFRD IRIs.
+The legacy is documentary, not ontological.
+If any external artifact has already cited OFRD, future public documentation should record “formerly referred to internally as OFRD” only when required for traceability.
+
+5. COMPLETION CRITERION
+The migration is complete when the live Drive baseline uses DLCRO, the spreadsheet contains no OFRD outside explicit historical context, and ARCH-02 adopts DLCRO as the namespace/IRI identity.
+Result: condition satisfied for opening Pull 05.

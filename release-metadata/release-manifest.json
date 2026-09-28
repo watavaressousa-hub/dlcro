@@ -1,0 +1,166 @@
+{
+  "schema": "DLCRO release manifest 1.0",
+  "name": "Dental Light-Curing and Radiometry Ontology",
+  "acronym": "DLCRO",
+  "editorial_version": "0.1",
+  "version": "0.1.0",
+  "release_date": null,
+  "release_date_status": "assigned only at final stable publication",
+  "status": "stable-candidate",
+  "repository": "https://github.com/watavaressousa-hub/dlcro",
+  "branch": "release/v0.1.0",
+  "frozen_rc1_ancestor": "1428abdeb3f043a70ebe62250abf56d7f56720cc",
+  "validated_branch_base_commit": "7536a2e063351d6e6607195165978c6cf8402c79",
+  "stable_candidate_content_commit": "1b682de9d515f2e3ceb709199f18f9e8ad03bbb3",
+  "git_commit": null,
+  "git_tag": null,
+  "review_pr": {
+    "number": 1,
+    "url": "https://github.com/watavaressousa-hub/dlcro/pull/1",
+    "state": "open",
+    "draft": true,
+    "opened_on": "2026-09-28"
+  },
+  "namespace": "https://w3id.org/dlcro/",
+  "ontology_iri": "https://w3id.org/dlcro",
+  "version_iri": "https://w3id.org/dlcro/0.1.0",
+  "w3id_status": "pending external registration/activation; preflight repository searches found no collision",
+  "semantic_change": false,
+  "semantic_diff": {
+    "removed_triples": 21,
+    "added_triples": 21,
+    "unexpected_semantic_diffs": 0,
+    "allowed_predicates": [
+      "http://purl.org/dc/terms/description",
+      "http://www.w3.org/2002/07/owl#versionInfo",
+      "http://www.w3.org/2002/07/owl#versionIRI"
+    ]
+  },
+  "ontology_files": [
+    {
+      "path": "ontology/alignment.ttl",
+      "sha256": "acb33833391ad1f08046d3c3dd5b8f098a579be5a353569cb27dd9ecfb922d30",
+      "bytes": 1885
+    },
+    {
+      "path": "ontology/context.ttl",
+      "sha256": "cd28b9ada4fadf4f00a46a68985a005282450177b00d62191b9ec20fed89d545",
+      "bytes": 1740
+    },
+    {
+      "path": "ontology/core.ttl",
+      "sha256": "e8cfa2e30d4c938531a11ee11ee8f256a866c6f1e0439fd7e0a093599508c480",
+      "bytes": 1167
+    },
+    {
+      "path": "ontology/dlcro.ttl",
+      "sha256": "914a364292ccb6c96902fbef4fc00b782545152fa34d1bc7c4a0774c015ade83",
+      "bytes": 917
+    },
+    {
+      "path": "ontology/lcu.ttl",
+      "sha256": "317d3572e455c83cbfc7bf2ed484c202a1e74b5ff090b12cef80256731847add",
+      "bytes": 2114
+    },
+    {
+      "path": "ontology/material.ttl",
+      "sha256": "6d13759927e1c295c791dbb7d41cfcbc7edb774f01af95ec627653f723b8341d",
+      "bytes": 4040
+    },
+    {
+      "path": "ontology/metrology.ttl",
+      "sha256": "fdb2346f50df9b5ac8df5662fc3d820f2ee58809b49b3e76551eaa48a62266c7",
+      "bytes": 4872
+    },
+    {
+      "path": "ontology/qi.ttl",
+      "sha256": "64fea9322932999f7ed2cecb65404cddb93082c049574e5d026cd45810dfd94d",
+      "bytes": 1434
+    },
+    {
+      "path": "ontology/radiometer.ttl",
+      "sha256": "8f80d82244a0414babad3c41e499db994ddf17e6b43d352b04860832ae8a1b22",
+      "bytes": 2346
+    },
+    {
+      "path": "ontology/radiometry.ttl",
+      "sha256": "9a09e3c43ebd88ea3038b8506c956279ff66744f5130c181181e17a8538ec1d5",
+      "bytes": 2258
+    }
+  ],
+  "validation": {
+    "gate": "PULL12_STABLE_CANDIDATE_FULL_REGRESSION",
+    "pass": true,
+    "pyshacl": "0.40.1",
+    "rdflib": "7.5.0",
+    "turtle_files": 10,
+    "merged_triples": 382,
+    "internal_import_edges": 33,
+    "external_imports": 0,
+    "missing_internal_imports": 0,
+    "import_cycles": 0,
+    "strong_owl_all_zero": true,
+    "shacl_valid": {
+      "conforms": true,
+      "validation_results": 0
+    },
+    "shacl_negative": {
+      "conforms": false,
+      "validation_results": 17
+    },
+    "must_cq_compiled": "15/15",
+    "must_cq_nonempty": "15/15",
+    "cq_rows": {
+      "CQ-01": 1,
+      "CQ-02": 1,
+      "CQ-03": 1,
+      "CQ-04": 5,
+      "CQ-05": 4,
+      "CQ-06": 1,
+      "CQ-08": 1,
+      "CQ-09": 1,
+      "CQ-10": 2,
+      "CQ-11": 2,
+      "CQ-12": 1,
+      "CQ-13": 3,
+      "CQ-14": 1,
+      "CQ-18": 4,
+      "CQ-20": 1
+    },
+    "cq20_end_to_end_rows": 1,
+    "pyshacl_source_tag": "v0.40.1",
+    "pyshacl_source_commit": "469cca7a22a078b36c167c1e8dadecf5e5ec6c75",
+    "pyshacl_vendor_module_count": 51
+  },
+  "license": {
+    "ontology_data_shacl_sparql_documentation": "CC-BY-4.0",
+    "validation_software": "MIT"
+  },
+  "citation": {
+    "status": "published on release branch and independently read back; author order corrected by explicit project authority before final review",
+    "doi": null,
+    "authors": [
+      "Willian Anderson Tavares de Sousa",
+      "Iakyra Borrakuens Couceiro",
+      "José Mauro Granjeiro",
+      "Thales Ribeiro de Magalhães Filho",
+      "Geraldo Roberto Carvalho Cernicchiaro",
+      "Wilson de Souza Melo Júnior",
+      "Leonardo da Cunha Boldrini Pereira"
+    ],
+    "first_author": "Willian Anderson Tavares de Sousa",
+    "last_author": "Leonardo da Cunha Boldrini Pereira",
+    "citation_file": "CITATION.cff"
+  },
+  "known_limitations": [
+    "No automatic claim of adequate cure or clinical performance.",
+    "No automatic regulatory conformity, calibration-validity, equipment-performance or fitness-for-purpose claim.",
+    "W3ID activation is external and remains pending."
+  ],
+  "nc_status": {
+    "NC-P12-05": "CLOSED — seven-author composition and order explicitly established by project authority",
+    "NC-P12-06": "CLOSED — full pySHACL 0.40.1 rerun reproduced",
+    "NC-P12-07": "CLOSED — LF checksum reconciliation completed and independently read back",
+    "NC-P12-08": "OPEN — administrative metadata reconciliation prepared in WRITESET-007; closes after repository readback"
+  }
+}

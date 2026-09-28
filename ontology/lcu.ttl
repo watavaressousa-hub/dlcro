@@ -16,8 +16,8 @@
 
 
 <https://w3id.org/dlcro/lcu> a owl:Ontology ;
-  owl:versionIRI <https://w3id.org/dlcro/0.1.0-dev/lcu> ;
-  owl:versionInfo "0.1.0-dev" ;
+  owl:versionIRI <https://w3id.org/dlcro/0.1.0/lcu> ;
+  owl:versionInfo "0.1.0" ;
   dcterms:title "DLCRO Light-Curing Unit"@en ;
   owl:imports <https://w3id.org/dlcro/core>, <https://w3id.org/dlcro/radiometry>, <https://w3id.org/dlcro/context> .
 dlcro-lcu:LightCuringUnit a owl:Class ; rdfs:label "dental light-curing unit"@en ; skos:altLabel "fotopolimerizador dental"@pt-BR .

@@ -1,0 +1,11 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+PREFIX dlcro-core: <https://w3id.org/dlcro/core#>
+PREFIX dlcro-rad: <https://w3id.org/dlcro/radiometry#>
+PREFIX dlcro-ctx: <https://w3id.org/dlcro/context#>
+PREFIX dlcro-met: <https://w3id.org/dlcro/metrology#>
+PREFIX dlcro-lcu: <https://w3id.org/dlcro/lcu#>
+PREFIX dlcro-rmeter: <https://w3id.org/dlcro/radiometer#>
+PREFIX dlcro-mat: <https://w3id.org/dlcro/material#>
+SELECT ?radiometer ?detector ?filter ?aperture ?responsivity WHERE { ?radiometer a dlcro-rmeter:DentalRadiometer ; dlcro-rmeter:hasDetector ?detector . OPTIONAL { ?radiometer dlcro-rmeter:hasOpticalFilter ?filter . } OPTIONAL { ?radiometer dlcro-rmeter:hasAperture ?aperture . } OPTIONAL { ?radiometer dlcro-rmeter:hasSpectralResponsivity ?responsivity . } }

@@ -1,0 +1,509 @@
+{
+  "gate": "PULL12_STABLE_CANDIDATE_FULL_REGRESSION",
+  "date": "2026-09-26",
+  "candidate_version": "0.1.0",
+  "semantic_change": false,
+  "pass": true,
+  "engine": {
+    "pyshacl": "0.40.1",
+    "rdflib": "7.5.0",
+    "pyshacl_source_commit": "469cca7a22a078b36c167c1e8dadecf5e5ec6c75",
+    "pyshacl_vendor_module_count": 51
+  },
+  "checks": {
+    "pyshacl_version": true,
+    "rdflib_version": true,
+    "valid_shacl": true,
+    "invalid_shacl": true,
+    "turtle_10": true,
+    "merged_382": true,
+    "internal_import_edges_33": true,
+    "external_imports_zero": true,
+    "missing_internal_imports_zero": true,
+    "import_cycles_zero": true,
+    "stable_version_iris": true,
+    "version_info_0_1_0": true,
+    "strong_owl_zero": true,
+    "local_entities_119": true,
+    "punning_zero": true,
+    "logical_blank_nodes_zero": true,
+    "unlabeled_zero": true,
+    "reasoning_class_universe_65": true,
+    "asserted_subclasses_9": true,
+    "closure_9": true,
+    "subclass_cycles_zero": true,
+    "nothing_conflicts_zero": true,
+    "disjoint_conflicts_zero": true,
+    "same_diff_conflicts_zero": true,
+    "sparql_15": true,
+    "sparql_all_compiled": true,
+    "sparql_all_nonempty": true,
+    "sparql_row_counts_frozen": true,
+    "cq20_end_to_end": true,
+    "semantic_change_false": true
+  },
+  "shacl": {
+    "valid": {
+      "conforms": true,
+      "validation_results": 0,
+      "report_triples": 2,
+      "report_sha256": "4a53a3befd9bcdb7273ef3d6e47a83be519927771faee49ef0d2a44ee23be2be",
+      "report_text": "Validation Report\nConforms: True\n"
+    },
+    "invalid": {
+      "conforms": false,
+      "validation_results": 17,
+      "report_triples": 185,
+      "report_sha256": "5600df4569f836f39497f80631bbf0cd1fd9d9aa7d5f3c27bc80e291722241d3",
+      "report_text": "Validation Report\nConforms: False\nResults (17):\nConstraint Violation in DatatypeConstraintComponent (http://www.w3.org/ns/shacl#DatatypeConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:datatype xsd:decimal ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path qudt:numericValue ]\n\tFocus Node: ex:badQV\n\tValue Node: Literal(\"not-a-number\")\n\tResult Path: qudt:numericValue\n\tMessage: Value is not Literal with datatype xsd:decimal\nConstraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:class dlcro-lcu:LightGuideOrTip ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path dlcro-lcu:hasDeliveryComponent ]\n\tFocus Node: ex:badLCU\n\tResult Path: dlcro-lcu:hasDeliveryComponent\n\tMessage: Less than 1 values on ex:badLCU->dlcro-lcu:hasDeliveryComponent\nConstraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:class dlcro-lcu:LightGuideOrTip ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path dlcro-lcu:usesTip ]\n\tFocus Node: ex:badExposure\n\tResult Path: dlcro-lcu:usesTip\n\tMessage: Less than 1 values on ex:badExposure->dlcro-lcu:usesTip\nConstraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:class dlcro-lcu:OperatingMode ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path dlcro-lcu:usesMode ]\n\tFocus Node: ex:badExposure\n\tResult Path: dlcro-lcu:usesMode\n\tMessage: Less than 1 values on ex:badExposure->dlcro-lcu:usesMode\nConstraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:class dlcro-lcu:OpticalSource ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path dlcro-lcu:hasOpticalSource ]\n\tFocus Node: ex:badLCU\n\tResult Path: dlcro-lcu:hasOpticalSource\n\tMessage: Less than 1 values on ex:badLCU->dlcro-lcu:hasOpticalSource\nConstraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:class dlcro-met:Indication ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path dlcro-met:producesIndication ]\n\tFocus Node: ex:badMeasurement\n\tResult Path: dlcro-met:producesIndication\n\tMessage: Less than 1 values on ex:badMeasurement->dlcro-met:producesIndication\nConstraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:class dlcro-met:Measurand ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path dlcro-met:hasMeasurand ]\n\tFocus Node: ex:badResult\n\tResult Path: dlcro-met:hasMeasurand\n\tMessage: Less than 1 values on ex:badResult->dlcro-met:hasMeasurand\nConstraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:class dlcro-met:TraceabilityStatement ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path dlcro-met:hasTraceability ]\n\tFocus Node: ex:badResult\n\tResult Path: dlcro-met:hasTraceability\n\tMessage: Less than 1 values on ex:badResult->dlcro-met:hasTraceability\nConstraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:class dlcro-met:UncertaintyBudget ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path dlcro-met:hasUncertaintyBudget ]\n\tFocus Node: ex:badResult\n\tResult Path: dlcro-met:hasUncertaintyBudget\n\tMessage: Less than 1 values on ex:badResult->dlcro-met:hasUncertaintyBudget\nConstraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:class dlcro-rmeter:Detector ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path dlcro-rmeter:hasDetector ]\n\tFocus Node: ex:badRadiometer\n\tResult Path: dlcro-rmeter:hasDetector\n\tMessage: Less than 1 values on ex:badRadiometer->dlcro-rmeter:hasDetector\nConstraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:class dlcro-rmeter:IntendedQuantity ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path dlcro-rmeter:declaresIntendedQuantity ]\n\tFocus Node: ex:badRadiometer\n\tResult Path: dlcro-rmeter:declaresIntendedQuantity\n\tMessage: Less than 1 values on ex:badRadiometer->dlcro-rmeter:declaresIntendedQuantity\nConstraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:class dlcro-rmeter:SpectralResponsivity ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path dlcro-rmeter:hasSpectralResponsivity ]\n\tFocus Node: ex:badRadiometer\n\tResult Path: dlcro-rmeter:hasSpectralResponsivity\n\tMessage: Less than 1 values on ex:badRadiometer->dlcro-rmeter:hasSpectralResponsivity\nConstraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path dlcro-core:targets ]\n\tFocus Node: ex:badExposure\n\tResult Path: dlcro-core:targets\n\tMessage: Less than 1 values on ex:badExposure->dlcro-core:targets\nConstraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path dlcro-ctx:hasGeometry ]\n\tFocus Node: ex:badExposure\n\tResult Path: dlcro-ctx:hasGeometry\n\tMessage: Less than 1 values on ex:badExposure->dlcro-ctx:hasGeometry\nConstraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path dlcro-rad:hasRadiantExposure ]\n\tFocus Node: ex:badExposure\n\tResult Path: dlcro-rad:hasRadiantExposure\n\tMessage: Less than 1 values on ex:badExposure->dlcro-rad:hasRadiantExposure\nConstraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path dlcro-rad:hasSpectralIrradiance ]\n\tFocus Node: ex:badExposure\n\tResult Path: dlcro-rad:hasSpectralIrradiance\n\tMessage: Less than 1 values on ex:badExposure->dlcro-rad:hasSpectralIrradiance\nConstraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n\tSeverity: sh:Violation\n\tSource Shape: [ sh:minCount Literal(\"3\", datatype=xsd:integer) ; sh:path dlcro-core:hasEvidenceComponent ]\n\tFocus Node: ex:badBundle\n\tResult Path: dlcro-core:hasEvidenceComponent\n\tMessage: Less than 3 values on ex:badBundle->dlcro-core:hasEvidenceComponent\n"
+    }
+  },
+  "schema": {
+    "files": {
+      "core.ttl": {
+        "triples": 16,
+        "sha256": "e8cfa2e30d4c938531a11ee11ee8f256a866c6f1e0439fd7e0a093599508c480",
+        "ontology_count": 1,
+        "version_iris": [
+          "https://w3id.org/dlcro/0.1.0/core"
+        ],
+        "version_info": [
+          "0.1.0"
+        ],
+        "version_ok": true,
+        "version_info_ok": true
+      },
+      "radiometry.ttl": {
+        "triples": 35,
+        "sha256": "9a09e3c43ebd88ea3038b8506c956279ff66744f5130c181181e17a8538ec1d5",
+        "ontology_count": 1,
+        "version_iris": [
+          "https://w3id.org/dlcro/0.1.0/radiometry"
+        ],
+        "version_info": [
+          "0.1.0"
+        ],
+        "version_ok": true,
+        "version_info_ok": true
+      },
+      "context.ttl": {
+        "triples": 27,
+        "sha256": "cd28b9ada4fadf4f00a46a68985a005282450177b00d62191b9ec20fed89d545",
+        "ontology_count": 1,
+        "version_iris": [
+          "https://w3id.org/dlcro/0.1.0/context"
+        ],
+        "version_info": [
+          "0.1.0"
+        ],
+        "version_ok": true,
+        "version_info_ok": true
+      },
+      "metrology.ttl": {
+        "triples": 95,
+        "sha256": "fdb2346f50df9b5ac8df5662fc3d820f2ee58809b49b3e76551eaa48a62266c7",
+        "ontology_count": 1,
+        "version_iris": [
+          "https://w3id.org/dlcro/0.1.0/metrology"
+        ],
+        "version_info": [
+          "0.1.0"
+        ],
+        "version_ok": true,
+        "version_info_ok": true
+      },
+      "lcu.ttl": {
+        "triples": 36,
+        "sha256": "317d3572e455c83cbfc7bf2ed484c202a1e74b5ff090b12cef80256731847add",
+        "ontology_count": 1,
+        "version_iris": [
+          "https://w3id.org/dlcro/0.1.0/lcu"
+        ],
+        "version_info": [
+          "0.1.0"
+        ],
+        "version_ok": true,
+        "version_info_ok": true
+      },
+      "radiometer.ttl": {
+        "triples": 39,
+        "sha256": "8f80d82244a0414babad3c41e499db994ddf17e6b43d352b04860832ae8a1b22",
+        "ontology_count": 1,
+        "version_iris": [
+          "https://w3id.org/dlcro/0.1.0/radiometer"
+        ],
+        "version_info": [
+          "0.1.0"
+        ],
+        "version_ok": true,
+        "version_info_ok": true
+      },
+      "material.ttl": {
+        "triples": 74,
+        "sha256": "6d13759927e1c295c791dbb7d41cfcbc7edb774f01af95ec627653f723b8341d",
+        "ontology_count": 1,
+        "version_iris": [
+          "https://w3id.org/dlcro/0.1.0/material"
+        ],
+        "version_info": [
+          "0.1.0"
+        ],
+        "version_ok": true,
+        "version_info_ok": true
+      },
+      "qi.ttl": {
+        "triples": 23,
+        "sha256": "64fea9322932999f7ed2cecb65404cddb93082c049574e5d026cd45810dfd94d",
+        "ontology_count": 1,
+        "version_iris": [
+          "https://w3id.org/dlcro/0.1.0/qi"
+        ],
+        "version_info": [
+          "0.1.0"
+        ],
+        "version_ok": true,
+        "version_info_ok": true
+      },
+      "alignment.ttl": {
+        "triples": 24,
+        "sha256": "acb33833391ad1f08046d3c3dd5b8f098a579be5a353569cb27dd9ecfb922d30",
+        "ontology_count": 1,
+        "version_iris": [
+          "https://w3id.org/dlcro/0.1.0/alignment"
+        ],
+        "version_info": [
+          "0.1.0"
+        ],
+        "version_ok": true,
+        "version_info_ok": true
+      },
+      "dlcro.ttl": {
+        "triples": 13,
+        "sha256": "914a364292ccb6c96902fbef4fc00b782545152fa34d1bc7c4a0774c015ade83",
+        "ontology_count": 1,
+        "version_iris": [
+          "https://w3id.org/dlcro/0.1.0"
+        ],
+        "version_info": [
+          "0.1.0"
+        ],
+        "version_ok": true,
+        "version_info_ok": true
+      }
+    },
+    "merged_triples": 382,
+    "import_edges": [
+      [
+        "https://w3id.org/dlcro/radiometry",
+        "https://w3id.org/dlcro/core"
+      ],
+      [
+        "https://w3id.org/dlcro/context",
+        "https://w3id.org/dlcro/core"
+      ],
+      [
+        "https://w3id.org/dlcro/context",
+        "https://w3id.org/dlcro/radiometry"
+      ],
+      [
+        "https://w3id.org/dlcro/metrology",
+        "https://w3id.org/dlcro/core"
+      ],
+      [
+        "https://w3id.org/dlcro/metrology",
+        "https://w3id.org/dlcro/radiometry"
+      ],
+      [
+        "https://w3id.org/dlcro/metrology",
+        "https://w3id.org/dlcro/context"
+      ],
+      [
+        "https://w3id.org/dlcro/lcu",
+        "https://w3id.org/dlcro/core"
+      ],
+      [
+        "https://w3id.org/dlcro/lcu",
+        "https://w3id.org/dlcro/radiometry"
+      ],
+      [
+        "https://w3id.org/dlcro/lcu",
+        "https://w3id.org/dlcro/context"
+      ],
+      [
+        "https://w3id.org/dlcro/radiometer",
+        "https://w3id.org/dlcro/core"
+      ],
+      [
+        "https://w3id.org/dlcro/radiometer",
+        "https://w3id.org/dlcro/radiometry"
+      ],
+      [
+        "https://w3id.org/dlcro/radiometer",
+        "https://w3id.org/dlcro/context"
+      ],
+      [
+        "https://w3id.org/dlcro/radiometer",
+        "https://w3id.org/dlcro/metrology"
+      ],
+      [
+        "https://w3id.org/dlcro/material",
+        "https://w3id.org/dlcro/core"
+      ],
+      [
+        "https://w3id.org/dlcro/material",
+        "https://w3id.org/dlcro/radiometry"
+      ],
+      [
+        "https://w3id.org/dlcro/material",
+        "https://w3id.org/dlcro/metrology"
+      ],
+      [
+        "https://w3id.org/dlcro/qi",
+        "https://w3id.org/dlcro/core"
+      ],
+      [
+        "https://w3id.org/dlcro/alignment",
+        "https://w3id.org/dlcro/core"
+      ],
+      [
+        "https://w3id.org/dlcro/alignment",
+        "https://w3id.org/dlcro/radiometry"
+      ],
+      [
+        "https://w3id.org/dlcro/alignment",
+        "https://w3id.org/dlcro/context"
+      ],
+      [
+        "https://w3id.org/dlcro/alignment",
+        "https://w3id.org/dlcro/metrology"
+      ],
+      [
+        "https://w3id.org/dlcro/alignment",
+        "https://w3id.org/dlcro/lcu"
+      ],
+      [
+        "https://w3id.org/dlcro/alignment",
+        "https://w3id.org/dlcro/radiometer"
+      ],
+      [
+        "https://w3id.org/dlcro/alignment",
+        "https://w3id.org/dlcro/material"
+      ],
+      [
+        "https://w3id.org/dlcro/alignment",
+        "https://w3id.org/dlcro/qi"
+      ],
+      [
+        "https://w3id.org/dlcro",
+        "https://w3id.org/dlcro/core"
+      ],
+      [
+        "https://w3id.org/dlcro",
+        "https://w3id.org/dlcro/radiometry"
+      ],
+      [
+        "https://w3id.org/dlcro",
+        "https://w3id.org/dlcro/context"
+      ],
+      [
+        "https://w3id.org/dlcro",
+        "https://w3id.org/dlcro/metrology"
+      ],
+      [
+        "https://w3id.org/dlcro",
+        "https://w3id.org/dlcro/lcu"
+      ],
+      [
+        "https://w3id.org/dlcro",
+        "https://w3id.org/dlcro/radiometer"
+      ],
+      [
+        "https://w3id.org/dlcro",
+        "https://w3id.org/dlcro/material"
+      ],
+      [
+        "https://w3id.org/dlcro",
+        "https://w3id.org/dlcro/qi"
+      ]
+    ],
+    "internal_import_edges": 33,
+    "external_imports": [],
+    "missing_internal_imports": [],
+    "cycles": [],
+    "strong_owl": {
+      "owl:Restriction": 0,
+      "owl:equivalentClass": 0,
+      "owl:equivalentProperty": 0,
+      "owl:disjointWith": 0,
+      "owl:propertyChainAxiom": 0,
+      "owl:oneOf": 0,
+      "owl:sameAs": 0
+    },
+    "local_entities": 119,
+    "punning": 0,
+    "logical_blank_nodes": 0,
+    "unlabeled": 0
+  },
+  "reasoning": {
+    "class_universe": 65,
+    "asserted_subclasses": 9,
+    "nonreflexive_closure": 9,
+    "cycles": [],
+    "owl_nothing_conflicts": [],
+    "disjointness_conflicts": [],
+    "sameAs_differentFrom_conflicts": []
+  },
+  "sparql": {
+    "total": 15,
+    "compiled": 15,
+    "nonempty": 15,
+    "rows": [
+      {
+        "cq": "CQ-01",
+        "compiled": true,
+        "rows": 1,
+        "nonempty": true,
+        "expected_rows": 1,
+        "row_count_match": true,
+        "error": null
+      },
+      {
+        "cq": "CQ-02",
+        "compiled": true,
+        "rows": 1,
+        "nonempty": true,
+        "expected_rows": 1,
+        "row_count_match": true,
+        "error": null
+      },
+      {
+        "cq": "CQ-03",
+        "compiled": true,
+        "rows": 1,
+        "nonempty": true,
+        "expected_rows": 1,
+        "row_count_match": true,
+        "error": null
+      },
+      {
+        "cq": "CQ-04",
+        "compiled": true,
+        "rows": 5,
+        "nonempty": true,
+        "expected_rows": 5,
+        "row_count_match": true,
+        "error": null
+      },
+      {
+        "cq": "CQ-05",
+        "compiled": true,
+        "rows": 4,
+        "nonempty": true,
+        "expected_rows": 4,
+        "row_count_match": true,
+        "error": null
+      },
+      {
+        "cq": "CQ-06",
+        "compiled": true,
+        "rows": 1,
+        "nonempty": true,
+        "expected_rows": 1,
+        "row_count_match": true,
+        "error": null
+      },
+      {
+        "cq": "CQ-08",
+        "compiled": true,
+        "rows": 1,
+        "nonempty": true,
+        "expected_rows": 1,
+        "row_count_match": true,
+        "error": null
+      },
+      {
+        "cq": "CQ-09",
+        "compiled": true,
+        "rows": 1,
+        "nonempty": true,
+        "expected_rows": 1,
+        "row_count_match": true,
+        "error": null
+      },
+      {
+        "cq": "CQ-10",
+        "compiled": true,
+        "rows": 2,
+        "nonempty": true,
+        "expected_rows": 2,
+        "row_count_match": true,
+        "error": null
+      },
+      {
+        "cq": "CQ-11",
+        "compiled": true,
+        "rows": 2,
+        "nonempty": true,
+        "expected_rows": 2,
+        "row_count_match": true,
+        "error": null
+      },
+      {
+        "cq": "CQ-12",
+        "compiled": true,
+        "rows": 1,
+        "nonempty": true,
+        "expected_rows": 1,
+        "row_count_match": true,
+        "error": null
+      },
+      {
+        "cq": "CQ-13",
+        "compiled": true,
+        "rows": 3,
+        "nonempty": true,
+        "expected_rows": 3,
+        "row_count_match": true,
+        "error": null
+      },
+      {
+        "cq": "CQ-14",
+        "compiled": true,
+        "rows": 1,
+        "nonempty": true,
+        "expected_rows": 1,
+        "row_count_match": true,
+        "error": null
+      },
+      {
+        "cq": "CQ-18",
+        "compiled": true,
+        "rows": 4,
+        "nonempty": true,
+        "expected_rows": 4,
+        "row_count_match": true,
+        "error": null
+      },
+      {
+        "cq": "CQ-20",
+        "compiled": true,
+        "rows": 1,
+        "nonempty": true,
+        "expected_rows": 1,
+        "row_count_match": true,
+        "error": null
+      }
+    ]
+  },
+  "rdf_diff": {
+    "removed_triples": 21,
+    "added_triples": 21,
+    "allowed_predicates": [
+      "http://www.w3.org/2002/07/owl#versionIRI",
+      "http://purl.org/dc/terms/description",
+      "http://www.w3.org/2002/07/owl#versionInfo"
+    ],
+    "unexpected_removed": [],
+    "unexpected_added": []
+  }
+}

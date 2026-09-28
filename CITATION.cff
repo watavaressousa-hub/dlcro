@@ -1,0 +1,43 @@
+cff-version: 1.2.0
+message: "If you use DLCRO, please cite this ontology release."
+title: "DLCRO: Dental Light-Curing and Radiometry Ontology"
+version: 0.1.0
+repository-code: "https://github.com/watavaressousa-hub/dlcro"
+url: "https://github.com/watavaressousa-hub/dlcro"
+license: CC-BY-4.0
+keywords:
+  - dental light-curing
+  - radiometry
+  - metrology
+  - ontology
+  - OWL
+  - dental radiometer
+authors:
+  - given-names: "Willian Anderson Tavares"
+    name-particle: "de"
+    family-names: "Sousa"
+    orcid: "https://orcid.org/0000-0002-9052-8268"
+    affiliation: "Instituto Nacional de Metrologia, Qualidade e Tecnologia (Inmetro)"
+  - given-names: "Iakyra Borrakuens"
+    family-names: "Couceiro"
+    affiliation: "Instituto Nacional de Metrologia, Qualidade e Tecnologia (Inmetro)"
+  - given-names: "José Mauro"
+    family-names: "Granjeiro"
+    orcid: "https://orcid.org/0000-0002-8027-8293"
+    affiliation: "Instituto Nacional de Metrologia, Qualidade e Tecnologia (Inmetro)"
+  - given-names: "Thales Ribeiro de"
+    family-names: "Magalhães Filho"
+    orcid: "https://orcid.org/0000-0003-4188-0975"
+    affiliation: "Universidade Federal Fluminense (UFF)"
+  - given-names: "Geraldo Roberto Carvalho"
+    family-names: "Cernicchiaro"
+    affiliation: "Centro Brasileiro de Pesquisas Físicas (CBPF)"
+  - given-names: "Wilson de Souza"
+    family-names: "Melo"
+    name-suffix: "Júnior"
+    orcid: "https://orcid.org/0000-0002-7710-7995"
+    affiliation: "Instituto Nacional de Metrologia, Qualidade e Tecnologia (Inmetro)"
+  - given-names: "Leonardo da Cunha"
+    family-names: "Boldrini Pereira"
+    orcid: "https://orcid.org/0000-0001-7709-4373"
+    affiliation: "Instituto Nacional de Metrologia, Qualidade e Tecnologia (Inmetro)"

@@ -12,8 +12,8 @@
 
 
 <https://w3id.org/dlcro/qi> a owl:Ontology ;
-  owl:versionIRI <https://w3id.org/dlcro/0.1.0-dev/qi> ;
-  owl:versionInfo "0.1.0-dev" ;
+  owl:versionIRI <https://w3id.org/dlcro/0.1.0/qi> ;
+  owl:versionInfo "0.1.0" ;
   dcterms:title "DLCRO Quality Infrastructure"@en ;
   owl:imports <https://w3id.org/dlcro/core> .
 dlcro-qi:StandardDocument a owl:Class ; rdfs:label "standard document"@en ; skos:altLabel "documento normativo"@pt-BR .

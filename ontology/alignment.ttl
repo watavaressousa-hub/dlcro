@@ -15,8 +15,8 @@
 
 
 <https://w3id.org/dlcro/alignment> a owl:Ontology ;
-  owl:versionIRI <https://w3id.org/dlcro/0.1.0-dev/alignment> ;
-  owl:versionInfo "0.1.0-dev" ;
+  owl:versionIRI <https://w3id.org/dlcro/0.1.0/alignment> ;
+  owl:versionInfo "0.1.0" ;
   dcterms:title "DLCRO Alignment"@en ;
   owl:imports <https://w3id.org/dlcro/core>, <https://w3id.org/dlcro/radiometry>, <https://w3id.org/dlcro/context>, <https://w3id.org/dlcro/metrology>, <https://w3id.org/dlcro/lcu>, <https://w3id.org/dlcro/radiometer>, <https://w3id.org/dlcro/material>, <https://w3id.org/dlcro/qi> .
 dlcro-align:AlignmentAssertion a owl:Class ; rdfs:label "alignment assertion"@en ; skos:altLabel "declaração de alinhamento"@pt-BR .

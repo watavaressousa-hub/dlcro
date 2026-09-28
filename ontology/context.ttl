@@ -15,8 +15,8 @@
 
 
 <https://w3id.org/dlcro/context> a owl:Ontology ;
-  owl:versionIRI <https://w3id.org/dlcro/0.1.0-dev/context> ;
-  owl:versionInfo "0.1.0-dev" ;
+  owl:versionIRI <https://w3id.org/dlcro/0.1.0/context> ;
+  owl:versionInfo "0.1.0" ;
   dcterms:title "DLCRO Context"@en ;
   owl:imports <https://w3id.org/dlcro/core>, <https://w3id.org/dlcro/radiometry> .
 dlcro-ctx:MeasurementGeometry a owl:Class ; rdfs:label "measurement geometry"@en ; skos:altLabel "geometria de medição"@pt-BR .

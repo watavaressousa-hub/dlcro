@@ -1,53 +1,46 @@
-﻿DECISION RECORD — FIRST RELEASE SCOPE: CHEMISTRY AND CLINICAL ONTOLOGIES
-Status: decisão de escopo vinculante antes do fechamento do Pull 07 / VAL-01.
-Release alvo: DLCRO v0.1.
-Questão: incorporar ontologia química completa de resinas/monômeros e ontologia clínica completa de procedimentos odontológicos no núcleo da primeira release?
+DECISION RECORD — FIRST RELEASE SCOPE: CHEMISTRY AND CLINICAL ONTOLOGIES
+Status: binding scope decision before closing Pull 07 / VAL-01.
+Target release: DLCRO v0.1.
+Question: should a complete chemical ontology of dental resins/monomers and a complete clinical ontology of dental procedures be incorporated into the core of the first release?
 
+1. DECISION
+Do not incorporate complete chemical or clinical ontologies into the DLCRO v0.1 core.
+In the first release, incorporate selective interoperability through external mappings limited to the terms actually used in the use cases, CQs, and demonstrative graph.
+Chemistry: ChEBI will be the priority reference for identifiable chemical entities; CHEMINF may be used only when chemical descriptors/representations are required. There will be no full import.
+Clinical: the Oral Health and Disease Ontology (OHD) will be the first open target for dental procedures/context. SNOMED CT may be used as an optional/documentary crosswalk, but it will not be a bundled dependency of the open release.
 
-1. DECISÃO
-Não incorporar ontologias química e clínica completas dentro do núcleo DLCRO v0.1.
-Incorporar, ainda na primeira release, interoperabilidade seletiva por mappings externos limitados aos termos efetivamente usados nos casos de uso, CQs e grafo demonstrativo.
-Química: ChEBI será a referência prioritária para entidades químicas identificáveis; CHEMINF poderá ser usado apenas quando descritores/representações químicas forem necessários. Não haverá importação integral.
-Clínica: Oral Health and Disease Ontology (OHD) será o primeiro alvo aberto para procedimentos/contexto odontológico. SNOMED CT poderá ter crosswalk documental/opcional, mas não será dependência empacotada da release aberta.
+2. SCIENTIFIC RATIONALE — PROJECT EVIDENCE BASE
+Venhoven, de Gee, and Davidson studied BisGMA–TEGDMA resins and showed that camphorquinone and reducing-agent concentration affects curing/conversion rate. Chemistry is relevant, but it rapidly expands the scope toward composition, concentration, and kinetics, far beyond DLCRO’s central question.
+Price, Felix, and Andreou (Biomaterials, 2005) demonstrated interaction among light source, composite, depth, and hardness response. This requires material context, but not a complete chemical ontology in the core.
+Santini et al. (Journal of Dentistry, 2012) and related works in the project evidence base show photoinitiator/spectrum dependence for degree of conversion and microhardness, supporting selective mappings of photoinitiators and monomers.
+Krishnaswamy and Sunitha (2007) show real clinical use of LCUs in an orthodontic procedure, but DLCRO’s scientific problem remains the light-curing/radiometry/metrology chain rather than complete representation of the dental record.
 
+3. EXTERNAL LANDSCAPE — CHEMISTRY
+ChEBI is an open, manually curated chemical entity database/ontology and publishes new ontology files monthly, including FULL, CORE, and LITE variants.
+Camphorquinone already has an identifiable ChEBI entity as bornane-2,3-dione (CHEBI:34607), demonstrating that at least an important part of the domain can be reused without local duplication.
+CHEMINF 2.1.0 is useful for descriptors and cheminformatics information, not as a replacement for ChEBI for the identity of all substances.
+Conclusion: duplicating ChEBI/CHEMINF in the core would work against reuse and would create unnecessary maintenance.
 
-2. FUNDAMENTAÇÃO CIENTÍFICA — BASE DO PROJETO
-Venhoven, de Gee e Davidson estudaram resinas BisGMA–TEGDMA e mostraram que concentração de camforquinona e agente redutor altera taxa de cura/conversão. A química é relevante, mas rapidamente expande o escopo para composição, concentração e cinética, muito além da pergunta central da DLCRO.
-Price, Felix e Andreou (Biomaterials, 2005) demonstraram interação entre fonte, compósito, profundidade e resposta de dureza. Isso exige contexto material, mas não uma ontologia química completa no núcleo.
-Santini et al. (Journal of Dentistry, 2012) e trabalhos relacionados na base mostram dependência de fotoiniciador/espectro para grau de conversão e microdureza, sustentando mappings seletivos de fotoiniciadores e monômeros.
-Krishnaswamy e Sunitha (2007) mostram uso clínico real de LCUs em procedimento ortodôntico, mas o problema científico da DLCRO continua sendo a cadeia light-curing/radiometry/metrology, e não a representação integral do prontuário odontológico.
+4. EXTERNAL LANDSCAPE — CLINICAL
+OHD — Oral Health and Disease Ontology — is in production, has release 2026-03-16, and is licensed CC-BY-4.0. It was created for diagnosis and treatment of dental conditions and for representing dental practice records.
+OHD already contains hierarchies of dental procedures and materials; therefore, it is a better interoperability target than creating a second clinical ontology within DLCRO.
+SNOMED CT has a General Dentistry package updated in 2026, but its use/distribution is governed by affiliate/national licensing. It therefore should not be a required dependency of an open ontology in the first release.
+OBI remains a useful candidate for assays/investigations, but it is not necessary to import it in full to answer the current CQs.
 
+5. WHY THE COMPLETE MODEL DOES NOT ENTER v0.1
+Scope explosion: dental resins involve monomers, oligomers, photoinitiators, coinitiators, fillers, silanes, pigments, inhibitors, concentrations, chemical structure, reactions, and polymerization products.
+Clinical explosion: complete dental procedures would require anatomy, diagnosis, patient, tooth/surface, condition, intervention, materials, medications, professional role, temporality, and the clinical record.
+Validation cost: each new strong class/relation expands the OWL profile, reasoner, CQ/SPARQL, and SHACL requirements.
+Governance cost: external resources evolve at different rates; full import would compromise core stability.
+Scientific dilution: DLCRO’s novelty is the integration of light-curing, radiometry, and metrological evidence, not replacement of ChEBI, OHD, or SNOMED CT.
 
-3. PAISAGEM EXTERNA — QUÍMICA
-ChEBI é uma base/ontologia aberta e manualmente curada de entidades químicas e publica novos arquivos de ontologia mensalmente, inclusive variantes FULL, CORE e LITE.
-Camphorquinone já possui entidade ChEBI identificável como bornane-2,3-dione (CHEBI:34607), demonstrando que pelo menos parte importante do domínio pode ser reutilizada sem duplicação local.
-CHEMINF 2.1.0 é útil para descritores e informação cheminformática, não como substituto de ChEBI para identidade de todas as substâncias.
-Conclusão: duplicar ChEBI/CHEMINF no núcleo seria antirreuse e criaria manutenção desnecessária.
+6. WHAT ENTERS THE FIRST RELEASE
+CHEM-01 — Selective Chemical Alignment: map only chemical entities required by the demo/CQs, starting with photoinitiators and monomers explicitly used; record gaps without creating fragile equivalences.
+CLIN-01 — Selective Clinical Alignment: map only the dental context/procedure required by the demo/CQs to OHD; keep SNOMED CT as an optional/documented bridge.
+These items belong to the DLCRO-Alignment module and do not generate external owl:imports.
+Both must be completed before the Release Candidate, but they do not block VAL-01 for the already-frozen skeleton.
 
-
-4. PAISAGEM EXTERNA — CLÍNICA
-OHD — Oral Health and Disease Ontology — está em produção, possui release 2026-03-16 e licença CC-BY-4.0. Foi criada para diagnóstico e tratamento de condições odontológicas e para representação de registros de prática dental.
-OHD já contém hierarquia de procedimentos odontológicos e materiais, portanto é melhor alvo para interoperabilidade clínica do que criar uma segunda ontologia clínica dentro da DLCRO.
-SNOMED CT possui pacote General Dentistry atualizado em 2026, mas sua utilização/distribuição é regulada por licenciamento de afiliado/nacional. Por isso não deve ser dependência necessária de uma ontologia aberta na primeira release.
-OBI permanece candidato útil para ensaios/investigações, mas não é necessário importar integralmente para resolver as CQs atuais.
-
-
-5. POR QUE O MODELO COMPLETO NÃO ENTRA NA v0.1
-Scope explosion: resinas odontológicas envolvem monômeros, oligômeros, fotoiniciadores, co-iniciadores, cargas, silanos, pigmentos, inibidores, concentrações, estrutura química, reações e produtos de polimerização.
-Clinical explosion: procedimentos odontológicos completos exigiriam anatomia, diagnóstico, paciente, dente/superfície, condição, intervenção, materiais, medicamentos, profissional, temporalidade e prontuário.
-Validation cost: cada nova classe/relação forte amplia perfil OWL, reasoner, CQ/SPARQL e SHACL necessários.
-Governance cost: recursos externos evoluem em ritmos diferentes; uma importação total comprometeria a estabilidade do core.
-Scientific dilution: a novidade da DLCRO é integrar light-curing, radiometry e metrological evidence, não substituir ChEBI, OHD ou SNOMED CT.
-
-
-6. O QUE ENTRA NA PRIMEIRA RELEASE
-CHEM-01 — Selective Chemical Alignment: mapear somente entidades químicas necessárias ao demo/CQs, começando por fotoiniciadores e monômeros explicitamente usados; registrar gaps sem criar equivalências frágeis.
-CLIN-01 — Selective Clinical Alignment: mapear somente o contexto/procedimento odontológico necessário ao demo/CQs para OHD; manter SNOMED CT como bridge opcional/documentada.
-Esses itens pertencem ao módulo DLCRO-Alignment e não geram external owl:imports.
-Ambos devem ser concluídos antes do Release Candidate, mas não bloqueiam VAL-01 do skeleton já congelado.
-
-
-7. CRITÉRIO PARA EXPANSÃO FUTURA
-Uma ontologia química/material mais profunda só será internalizada se novas CQs exigirem formulação, concentração ou transformação química não cobertas por mappings externos.
-Uma ontologia clínica mais profunda só será internalizada se casos de uso demonstrarem necessidade de raciocínio clínico próprio que OHD/outros recursos não cubram adequadamente.
-Expansão ocorrerá em módulos opcionais, preservando o core DLCRO.
+7. CRITERION FOR FUTURE EXPANSION
+A deeper chemical/material ontology will be internalized only if new CQs require formulation, concentration, or chemical transformation not covered by external mappings.
+A deeper clinical ontology will be internalized only if use cases demonstrate a need for DLCRO-specific clinical reasoning that OHD/other resources do not cover adequately.
+Expansion will occur in optional modules, preserving the DLCRO core.

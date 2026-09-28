@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.1.0] — 2026-09-26
+## [0.1.0] — Unreleased
 
 First stable-release candidate of the Dental Light-Curing and Radiometry Ontology (DLCRO).
 
